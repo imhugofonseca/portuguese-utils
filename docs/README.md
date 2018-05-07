@@ -39,3 +39,7 @@ const postalCode = '3863-122'
 const isMyPostalCodeValid =  isValidPostalCode(postalCode)
 console.log(isMyPostalCodeValid) // true
 ```
+
+
+## Documentation
+*Todo*
