@@ -8,6 +8,6 @@
         * [formateDateTime](formaters.md?id=formatdatetime)
    
     * Validators
-        * [isValidNIF](validators.md?id=isvalidnif)
-        * [isValidPostalCode](validators.md?id=isvalidpostalcode)
-        * [isValidMobileNumber](validators.md?id=isvalidmobilenumber)
+        * [isValidNIF](validators.md?id=isvalidnifnif-string)
+        * [isValidPostalCode](validators.md?id=isvalidpostalcodepostalcode-string)
+        * [isValidMobileNumber](validators.md?id=isvalidmobilenumbermobilenumber-string)
