@@ -2,7 +2,7 @@
   "name": "portuguese-utils",
   "version": "0.0.2",
   "description": "A set of usefull utils for developing Portuguese Web Applications",
-  "main": "index.js",
+  "main": "./index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__  && cp -r src/types ./types ",
