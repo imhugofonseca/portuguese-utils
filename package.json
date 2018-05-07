@@ -5,9 +5,9 @@
   "main": "index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "build": "babel src --out-dir . --ignore **/__tests__  && cpx src/types/*.d.ts types",
+    "build": "babel src --out-dir . --ignore **/__tests__  && cp -r src/types ./types ",
     "prepublish": "NODE_ENV=production npm run build",
-    "watch": "rm -rf dist/ && babel -w src --out-dir dist --ignore **/__tests__ && cpx -w src/types/*.d.ts types",
+    "watch": "rm -rf dist/ && babel -w src --out-dir dist --ignore **/__tests__",
     "test": "jest",
     "test:watch": "jest --watch"
   },
