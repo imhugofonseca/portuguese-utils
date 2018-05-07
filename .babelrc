@@ -1,0 +1,6 @@
+{
+    "presets": ["env"],
+    "ignore": [
+      "__types__"
+    ]
+  }

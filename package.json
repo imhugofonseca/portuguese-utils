@@ -1,0 +1,37 @@
+{
+  "name": "portuguese-utils",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist/ && babel src --out-dir dist --ignore **/__tests__  && cpx src/**/*.d.ts dist",
+    "prepublish": "NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir dist --ignore **/__tests__",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-runtime": "^6.26.0",
+    "cpx": "^1.5.0",
+    "jest": "^22.4.3",
+    "versionist": "^2.13.0"
+  },
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.test.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
+  }
+}
