@@ -9,7 +9,8 @@
     "prepublish": "NODE_ENV=production npm run build",
     "watch": "rm -rf dist/ && babel -w src --out-dir . --ignore **/__tests__",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "versionist": "versionist"
   },
   "repository": {
     "type": "git",

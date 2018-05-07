@@ -2,3 +2,4 @@
 .travi.yml
 src/
 .babelrc
+versionist.conf.js
