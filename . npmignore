@@ -1,0 +1,4 @@
+.gitignore
+.travi.yml
+src/
+.babelrc

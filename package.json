@@ -1,16 +1,21 @@
 {
   "name": "portuguese-utils",
   "version": "0.0.1",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "A set of usefull utils for developing Portuguese Web Applications",
+  "main": "index.js",
+  "types": "types/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist/ && babel src --out-dir dist --ignore **/__tests__  && cpx src/**/*.d.ts dist",
+    "build": "babel src --out-dir . --ignore **/__tests__  && cpx src/types/*.d.ts types",
     "prepublish": "NODE_ENV=production npm run build",
-    "watch": "babel -w src --out-dir dist --ignore **/__tests__",
+    "watch": "rm -rf dist/ && babel -w src --out-dir dist --ignore **/__tests__ && cpx -w src/types/*.d.ts types",
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugo-fonseca/portuguese-utils"
+  },
+  "author": "Hugo Fonseca <imhugofonseca@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
