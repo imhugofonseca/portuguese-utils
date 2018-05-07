@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "node"
+  - "iojs"
+  - "7"
+deploy:
+  provider: npm
+  email: imhugofonseca@gmail.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true  
