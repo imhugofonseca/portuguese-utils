@@ -3,6 +3,7 @@ node_js:
   - "node"
   - "8"
   - "7"
+before_deploy: npm i
 deploy:
   provider: npm
   email: imhugofonseca@gmail.com
