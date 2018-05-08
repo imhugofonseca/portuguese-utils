@@ -64,3 +64,25 @@ const isNumberValid = isValidMobileNumber('917344888')
 console.log(isNumberValid)
 // => true
 ```
+
+## isValidCCNumber(citizenCardNumber: string)
+Validates a portuguese citizen card number
+
+
+#### Arguments
+***citizenCardNumber (string)*** : The citizen card number to be checked as string.
+
+
+#### Returns
+***(boolean)***: True if valid and False if invalid.
+
+
+#### Example
+
+```js
+import isValidCCNumber from 'portuguese-utils/validators/isValidCCNumber'
+const isCCValid = isValidCCNumber('00000000 0 ZZ4')
+
+console.log(isCCValid)
+// => true
+```
