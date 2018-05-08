@@ -105,6 +105,6 @@ Validates a portuguese license plate number
 import isValidLicensePlate from 'portuguese-utils/validators/isValidLicensePlate'
 const isLicensePlateValid = isValidLicensePlate('00-AA-00')
 
-console.log(isValidLicensePlate)
+console.log(isLicensePlateValid)
 // => true
 ```
