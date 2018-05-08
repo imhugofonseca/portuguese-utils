@@ -17,9 +17,13 @@ export default  function isValidLicensePlate(plateNumber) {
   if (arrayOfPairs.length !== 3 )  return false
 
   // Pairs should only have valid characters a-z A-Z 0-9
+  // Pair character should be same type
   const validateCharacters = arrayOfPairs
     .map((pair) => {
       const patt = new RegExp("[a-zA-Z0-9][a-zA-Z0-9]")
+      const fistCharacterType = isNaN(parseInt(pair[0]))
+      const secondCharacterType = isNaN(parseInt(pair[1]))
+      if (fistCharacterType !== secondCharacterType) return false
       return patt.test(pair)
     })
 
@@ -32,7 +36,7 @@ export default  function isValidLicensePlate(plateNumber) {
     }, [])
     .filter(item => isNaN(item)).length
 
-  if (validateCharacters.indexOf(false).length) return false
+  if (validateCharacters.indexOf(false) !== -1) return false
   if (numberOfAlphabeticPairs < 1 || numberOfAlphabeticPairs > 2) return false
 
   return true
