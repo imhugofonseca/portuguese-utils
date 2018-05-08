@@ -4,10 +4,4 @@ import isValidMobileNumber from './isValidMobileNumber'
 import isValidCCNumber from './isValidCCNumber'
 import isValidLicensePlate from './isValidLicensePlate'
 
-export {
-    isValidPostalCode,
-    isValidNIF,
-    isValidMobileNumber,
-    isValidCCNumber,
-    isValidLicensePlate
-}
+export { isValidPostalCode, isValidNIF, isValidMobileNumber, isValidCCNumber, isValidLicensePlate }
