@@ -7,7 +7,8 @@ deploy:
   provider: npm
   email: imhugofonseca@gmail.com
   api_key: $NPM_TOKEN
+  tag: next
   on:
-    tags: true
-    all_branches: true
+    repo: hugo-fonseca/portuguese-utils
+    branch: master
     node: "node"
