@@ -4100,9 +4100,9 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
-"update-json@git+https://github.com/resin-io-modules/update-json.git":
+"update-json@https://github.com/resin-io-modules/update-json":
   version "1.0.0"
-  resolved "git+https://github.com/resin-io-modules/update-json.git#d240386af16525abd5327e7994e7c601d1887122"
+  resolved "https://github.com/resin-io-modules/update-json#d240386af16525abd5327e7994e7c601d1887122"
   dependencies:
     async "^1.5.2"
 
