@@ -103,7 +103,7 @@ Validates a portuguese license plate number
 
 ```js
 import isValidLicensePlate from 'portuguese-utils/validators/isValidLicensePlate'
-const isCCValid = isValidCCNumber('00-AA-00')
+const isLicensePlateValid = isValidCCNumber('00-AA-00')
 
 console.log(isValidLicensePlate)
 // => true
