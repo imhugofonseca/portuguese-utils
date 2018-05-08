@@ -49,14 +49,14 @@ export default function isValidCCNumber(citizenCardNumber) {
   if (trimmedAndUpper.length != 12) return false
 
   let total = 0
-  let skipCharacter = false
+  let secondDigit = false
 
   // Calculate the validity using CheckDigit
   // https://www.autenticacao.gov.pt/documents/10179/11463/Valida%C3%A7%C3%A3o+de+N%C3%BAmero+de+Documento+do+Cart%C3%A3o+de+Cidad%C3%A3o/0dbc446b-3718-41e5-b982-551a72f8b8a8
   for (let i = trimmedAndUpper.length - 1; i >= 0; i--) {
     let value = getCharacterValue[trimmedAndUpper[i]]
 
-    if (skipCharacter) {
+    if (secondDigit) {
       value *= 2
 
       if (value >= 10) {
@@ -66,7 +66,7 @@ export default function isValidCCNumber(citizenCardNumber) {
     }
 
     total += value
-    skipCharacter = !skipCharacter
+    secondDigit = !secondDigit
 
   }
 
