@@ -1,22 +1,23 @@
 {
   "name": "portuguese-utils",
   "version": "0.0.5",
-  "description": "A set of usefull utils for developing Portuguese Web Applications",
+  "description":
+    "A set of usefull utils for developing Portuguese Web Applications",
   "main": "./index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "build": "babel src --out-dir . --ignore **/__tests__  && cpx src/types/**/*.d.ts types/",
+    "build":
+      "babel src --out-dir . --ignore **/__tests__  && cpx src/types/**/*.d.ts types/",
     "precommit": "lint-staged",
     "lint": "prettier src/**/*.js -l",
     "lint:fix": "prettier src/**/*.js --write",
     "prepublish": "NODE_ENV=production npm run build",
     "watch": "rm -rf dist/ && babel -w src --out-dir . --ignore **/__tests__",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "versionist": "versionist"
+    "test:watch": "jest --watch"
   },
   "lint-staged": {
-    "*.{js,md}": ["prettier --config .prettierrc.yml --write", "git add"]
+    "*.{js,json,md}": ["prettier --write", "git add"]
   },
   "repository": {
     "type": "git",
@@ -37,15 +38,10 @@
   },
   "jest": {
     "verbose": true,
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.test.js"
-    ],
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.test.js"],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
     },
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ]
+    "moduleDirectories": ["node_modules", "src"]
   }
 }
