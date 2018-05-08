@@ -11,10 +11,11 @@ export default  function isValidLicensePlate(plateNumber) {
   // Pairs separator should be an hifen '-'
   if (plateNumber[2] !== '-' && plateNumber[5] !== '-') return false
 
+  // Split plate number by the hyfen
   const arrayOfPairs = plateNumber.split('-')
 
   // Plate number should have 3 pairs of characters
-  if (arrayOfPairs.length !== 3 )  return false
+  if (arrayOfPairs.length !== 3) return false
 
   // Pairs should only have valid characters a-z A-Z 0-9
   // Pair character should be same type
@@ -26,6 +27,7 @@ export default  function isValidLicensePlate(plateNumber) {
       if (fistCharacterType !== secondCharacterType) return false
       return patt.test(pair)
     })
+  if (validateCharacters.indexOf(false) !== -1) return false
 
   // Plate should have a minimum of 1 pairs of letters
   // and maximum of two pairs of letters 
@@ -35,9 +37,29 @@ export default  function isValidLicensePlate(plateNumber) {
       return acc
     }, [])
     .filter(item => isNaN(item)).length
-
-  if (validateCharacters.indexOf(false) !== -1) return false
   if (numberOfAlphabeticPairs < 1 || numberOfAlphabeticPairs > 2) return false
+
+  // Get alphabetic pair position 
+  // output example: [true, false, false] (true = alphabetic pair)
+  const alphabeticPairPosition = arrayOfPairs
+    .reduce((acc, item) => {
+      acc.push(isNaN(parseInt(item, 10)))
+      return acc
+    }, [])
+
+  // Array with invalid positions for alphabetic pairs
+  // Not allowed: AA-AA-NN, NN-AA-AA
+  const positionsNotAllowed = [
+    [true, true, false],
+    [false, true, true]
+  ]
+
+  // Validate alphaetic pair position
+  const notAllowed = positionsNotAllowed.map((item) => {
+    if (item.toString() === alphabeticPairPosition.toString()) return false
+  })
+  if (notAllowed.indexOf(false) !== -1) return false
+
 
   return true
 }
