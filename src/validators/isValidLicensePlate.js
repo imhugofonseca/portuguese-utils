@@ -6,7 +6,7 @@
 export default function isValidLicensePlate(plateNumber) {
   if (typeof plateNumber !== 'string') return false
   if (
-    !/^([a-zA-Z0-9])\1{1}-([a-zA-Z0-9])\2{1}-([a-zA-Z0-9])\3{1}$/g.test(
+    !/(?!(([a-zA-Z]{2})-([a-zA-Z]{2})-(\d{2}))|(\d{2})-([a-zA-Z]{2})-([a-zA-Z]{2}))((\d{2})|([a-zA-Z]{2}))-((\d{2})|(\w{2}))-((\d{2})|(\w{2}))/g.test(
       plateNumber
     )
   )

@@ -18,6 +18,5 @@ test('isValidLicensePlate returns true if valid plate number', () => {
   expect(isValidLicensePlate('BB-01-02')).toBe(true)
   expect(isValidLicensePlate('03-03-CC')).toBe(true)
   expect(isValidLicensePlate('NN-00-NN')).toBe(true)
-  expect(isValidLicensePlate('az-10-xZ')).toBe(true)
-
+  expect(isValidLicensePlate('az-10-xZ')).toBe(false)
 })
