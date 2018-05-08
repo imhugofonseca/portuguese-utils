@@ -11,3 +11,4 @@
         * [isValidNIF](validators.md?id=isvalidnifnif-string)
         * [isValidPostalCode](validators.md?id=isvalidpostalcodepostalcode-string)
         * [isValidMobileNumber](validators.md?id=isvalidmobilenumbermobilenumber-string)
+        * [isValidCCNumber](validators.md?id=isvalidccnumbercitizencardnumber-string)
