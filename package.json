@@ -42,7 +42,7 @@
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules",
-      "**/*.test.js"
+      "<rootDir>/src/**/__tests__/**/*.test.js"
     ],
     "verbose": true,
     "testMatch": ["<rootDir>/src/**/__tests__/**/*.test.js"],
