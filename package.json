@@ -40,7 +40,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js}"
     ],
-    "coveragePathIgnorePatterns": [,
+    "coveragePathIgnorePatterns": [
       "/node_modules",
       "**/*.test.js"
     ],
