@@ -9,7 +9,7 @@ export default function formatDecimalNumber(
   number,
   options = { showLeadingZeros: false, decimals: 2 }
 ) {
-  if (typeof number !== 'string' && typeof number !== 'number') {
+  if (['string', 'number'].indexOf(typeof number) === -1) {
     throw new TypeError('Argument number must of type Number or String')
   }
 
@@ -18,11 +18,11 @@ export default function formatDecimalNumber(
   }
 
   let minSize = 3
-  let decimalsSize = typeof options.decimals === 'number' ? options.decimals : 2
+  let decimalsSize = options.decimals || 2
   let padSize = minSize + decimalsSize
   let formatedNumber = number
 
-  if (options && options.showLeadingZeros) {
+  if (options.showLeadingZeros) {
     formatedNumber = Number(formatedNumber).toFixed(decimalsSize)
     formatedNumber = String(formatedNumber).padEnd(padSize, '0')
   }
