@@ -1,6 +1,6 @@
 {
   "name": "portuguese-utils",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description":
     "A set of usefull utils for developing Portuguese Web Applications",
   "main": "index.js",
