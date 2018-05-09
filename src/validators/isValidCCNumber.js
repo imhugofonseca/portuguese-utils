@@ -3,24 +3,29 @@
  * @param {String} citizenCardNumber
  */
 export default function isValidCCNumber(citizenCardNumber) {
-  if (typeof citizenCardNumber !== 'string') return false
+  if (typeof citizenCardNumber !== 'string') {
+    return false
+  }
 
-  const trimmedAndUpper = citizenCardNumber.replace(/\s+/g, '').toUpperCase()
-  if (trimmedAndUpper.length != 12) return false
+  // Join and uppercase
+  let trimmedAndUpper = citizenCardNumber.replace(/\s+/g, '').toUpperCase()
+  if (trimmedAndUpper.length != 12) {
+    return false
+  }
 
   // Calculate the validity using CheckDigit
-  const charCodes = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  let secondDigit = false
-  const total = trimmedAndUpper
+  let isSecondDigit = false
+  let charCodes = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let checkDigitTotal = trimmedAndUpper
     .split('')
     .reverse()
     .reduce((sum, value) => {
       let code = charCodes.indexOf(value)
-      code = secondDigit ? code * 2 : code
-      code -= secondDigit ? (code >= 10 ? 9 : 0) : 0
-      secondDigit = !secondDigit
+      code = isSecondDigit ? code * 2 : code
+      code -= isSecondDigit ? (code >= 10 ? 9 : 0) : 0
+      isSecondDigit = !isSecondDigit
       return sum + code
     }, 0)
 
-  return total % 10 === 0
+  return checkDigitTotal % 10 === 0
 }
