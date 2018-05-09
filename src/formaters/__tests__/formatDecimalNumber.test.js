@@ -13,6 +13,7 @@ test('formatDecimalNumber should convert numbers correctly', () => {
   expect(formatDecimalNumber(300.5, { showLeadingZeros: true })).toBe('300,50')
   expect(formatDecimalNumber(300)).toBe('300')
   expect(formatDecimalNumber(15)).toBe('15')
+  expect(() => formatDecimalNumber(15, null)).toThrow(TypeError)
   expect(() => formatDecimalNumber(null)).toThrow(TypeError)
   expect(() => formatDecimalNumber(undefined)).toThrow(TypeError)
   expect(formatDecimalNumber('000000000dsfsdfsd')).toBe('000000000dsfsdfsd')
