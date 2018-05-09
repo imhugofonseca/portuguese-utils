@@ -1,6 +1,6 @@
 /**
  * Validates a portuguese citizen card number
- * @param {String} citizenCardNumber
+ * @param {String} citizenCardNumber 
  */
 
 const getCharacterValue = {

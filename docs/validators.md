@@ -86,3 +86,25 @@ const isCCValid = isValidCCNumber('00000000 0 ZZ4')
 console.log(isCCValid)
 // => true
 ```
+
+## isValidLicensePlate(plateNumber: string)
+Validates a portuguese license plate number
+
+
+#### Arguments
+***plateNumber (string)*** : The license plate number checked as string.
+
+
+#### Returns
+***(boolean)***: True if valid and False if invalid.
+
+
+#### Example
+
+```js
+import isValidLicensePlate from 'portuguese-utils/validators/isValidLicensePlate'
+const isLicensePlateValid = isValidLicensePlate('00-AA-00')
+
+console.log(isLicensePlateValid)
+// => true
+```
