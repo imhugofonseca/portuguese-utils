@@ -1,5 +1,7 @@
 # 🇵🇹 Portuguese Utils 
 [![Build Status](https://travis-ci.org/hugo-fonseca/portuguese-utils.svg?branch=master)](https://travis-ci.org/hugo-fonseca/portuguese-utils)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a1670c105d39da659957/maintainability)](https://codeclimate.com/github/hugo-fonseca/portuguese-utils/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a1670c105d39da659957/test_coverage)](https://codeclimate.com/github/hugo-fonseca/portuguese-utils/test_coverage)
 
 A set of usefull utils for developing Portuguese Web Applications.
 
