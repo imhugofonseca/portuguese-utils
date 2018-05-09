@@ -19,8 +19,18 @@ Using Yarn:
 
 ## 🚀 How to use
 
-1. Import the needed function
 
+### CDN
+You can use this lib in the browser using the minified bundle via CDN.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/portuguese-utils@0.0.10/portuguese-utils.min.js" />
+```
+
+### Module
+You can also use this lib as a module following the instructions bellow
+
+#### Import the needed function
 - From the validators module
 ```js
 import { isValidPostalCode } from 'portuguese-utils/validators'
@@ -37,7 +47,7 @@ import { isValidPostalCode } from 'portuguese-utils'
 ```
 
 
-2. Use the function
+#### Using
 ```js
 const postalCode = '3863-122'
 const isMyPostalCodeValid =  isValidPostalCode(postalCode)
