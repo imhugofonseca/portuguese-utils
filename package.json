@@ -43,7 +43,7 @@
     "coveragePathIgnorePatterns": [,
       "/node_modules",
       "**/*.test.js"
-    ]
+    ],
     "verbose": true,
     "testMatch": ["<rootDir>/src/**/__tests__/**/*.test.js"],
     "transform": {
