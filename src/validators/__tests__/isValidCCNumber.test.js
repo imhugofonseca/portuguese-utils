@@ -10,7 +10,7 @@ test('isValidCCNumber returns false in invalid card numbers', () => {
 })
 
 test('isValidCCNumber returns true in valid numbers', () => {
-  expect(isValidCCNumber('00000000 0 ZZ4')).toBe(true)
+  expect(isValidCCNumber('15124873 7 ZZ4')).toBe(true)
   expect(isValidCCNumber('000000000ZZ4')).toBe(true)
   expect(isValidCCNumber('04521224 4zz7')).toBe(true)
   expect(isValidCCNumber('04521224 4ZZ7')).toBe(true)
