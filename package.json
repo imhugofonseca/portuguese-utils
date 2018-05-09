@@ -13,7 +13,7 @@
     "lint:fix": "prettier src/**/*.js --write",
     "prepublish": "NODE_ENV=production npm run build",
     "watch": "rm -rf dist/ && babel -w src --out-dir . --ignore **/__tests__",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "lint-staged": {
@@ -37,6 +37,13 @@
     "prettier": "1.12.1"
   },
   "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js}"
+    ],
+    "coveragePathIgnorePatterns": [,
+      "/node_modules",
+      "**/*.test.js"
+    ]
     "verbose": true,
     "testMatch": ["<rootDir>/src/**/__tests__/**/*.test.js"],
     "transform": {
