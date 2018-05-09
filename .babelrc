@@ -3,9 +3,8 @@
       ["env", {
         "targets": {
           "browsers": ["last 2 versions", "safari >= 7"],
-          "node": "6"
-        },
-        "useBuiltIns": true
+          "node": "current"
+        }
       }]
     ],
     "ignore": [
