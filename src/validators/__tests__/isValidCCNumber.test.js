@@ -1,6 +1,8 @@
 import isValidCCNumber from 'validators/isValidCCNumber'
 
 test('isValidCCNumber returns false in invalid card numbers', () => {
+  expect(isValidCCNumber(null)).toBe(false)
+  expect(isValidCCNumber('')).toBe(false)
   expect(isValidCCNumber(undefined)).toBe(false)
   expect(isValidCCNumber('0521224 4zz7')).toBe(false)
   expect(isValidCCNumber('04521224 4zz1')).toBe(false)

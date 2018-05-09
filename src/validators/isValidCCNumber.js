@@ -1,6 +1,6 @@
 /**
  * Validates a portuguese citizen card number
- * @param {String} citizenCardNumber 
+ * @param {String} citizenCardNumber
  */
 
 const getCharacterValue = {
@@ -44,7 +44,7 @@ const getCharacterValue = {
 
 export default function isValidCCNumber(citizenCardNumber) {
   if (typeof citizenCardNumber !== 'string') return false
-  if (citizenCardNumber === undefined) return false
+  if (!citizenCardNumber) return false
   let trimmedAndUpper = citizenCardNumber.replace(/\s+/g, '').toUpperCase()
   if (trimmedAndUpper.length != 12) return false
 

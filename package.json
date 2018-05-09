@@ -37,9 +37,7 @@
     "prettier": "1.12.1"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js}"],
     "verbose": true,
     "testMatch": ["<rootDir>/src/**/__tests__/**/*.test.js"],
     "transform": {
