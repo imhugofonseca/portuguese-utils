@@ -13,7 +13,7 @@ export default function formatDecimalNumber(
     throw new TypeError('Argument number must of type Number or String')
   }
 
-  if (options && typeof options !== 'object') {
+  if (!options || typeof options !== 'object') {
     throw new TypeError('Argument options must of type Object')
   }
 
