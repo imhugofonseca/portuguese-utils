@@ -6,7 +6,7 @@ export default {
   input: 'src/index.js',
   output: {
     file: 'portuguese-utils.min.js',
-    name: 'portuguese-utils',
+    name: 'portugueseUtils',
     format: 'umd'
   },
   plugins: [
