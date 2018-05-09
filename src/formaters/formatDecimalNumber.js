@@ -1,3 +1,5 @@
+import 'core-js/modules/es7.string.pad-end'
+
 /**
  * Formats decimal numbers to semicolon format, portugal's standard
  * @param {string|number} number
