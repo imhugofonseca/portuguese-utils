@@ -9,20 +9,17 @@ export default function formatToCurrency(number, numDecimals) {
   if (typeof number !== 'number' || isNaN(number)) return false
 
   let integer, decimal, output, string
-  let numTrailingZeroes = numDecimals === undefined ? 0 : numDecimals
-
-  string =
-    numTrailingZeroes !== 0
-      ? number.toFixed(numTrailingZeroes)
-      : Math.floor(number).toString()
+  string = numDecimals
+    ? number.toFixed(numDecimals)
+    : Math.floor(number).toString()
 
   if (string.indexOf('.') !== -1) {
     let split = string.split('.')
     decimal = split[1]
-    integer = intToThousands(split[0])
+    integer = addSeparators(split[0])
     output = integer + ',' + decimal
   } else {
-    integer = intToThousands(string)
+    integer = addSeparators(string)
     output = integer
   }
 
@@ -32,15 +29,23 @@ export default function formatToCurrency(number, numDecimals) {
 
 /**
   * Helper function
-  * Returns a string number with the thounsands separator
+  * Returns a the 'number' with thousands separator
   + Example: 1000000 => 1.000.000
-  * @param {string} integer
+  * @param {string} number
 **/
 
-function intToThousands(integer) {
+function addSeparators(number) {
+  if (typeof number !== 'string' || isNaN(parseInt(number))) {
+    throw new TypeError('Argument number must be digits of type String')
+  }
+
+  if (number.indexOf('.') !== -1) {
+    throw new TypeError('Argument must be an integer of type String')
+  }
+
   let count = 0
 
-  return integer
+  return number
     .split('')
     .reverse()
     .reduce((acc, curr) => {
