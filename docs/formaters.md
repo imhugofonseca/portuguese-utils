@@ -61,3 +61,41 @@ formatedNumber = formatDecimalNumber(300.128, {
 console.log(formatedNumber)
 // => '300,128'
 ```
+
+## formatToCurrency(number: number, numDecimals: number)
+
+Formats numbers (integer or floating) portugal's currency
+
+#### Arguments
+
+**number (number)**: The number to be formated
+
+**numDecimals (number)**: Option for number of decimals
+
+> _default: 0_
+
+#### Returns
+
+**_(string)_**: The formated number
+
+#### Example
+
+```js
+import formatToCurrency from 'portuguese-utils/formaters/formatToCurrency'
+
+// Default options
+let formatedNumber = formatToCurrency('3000.134')
+
+console.log(formatedNumber)
+// => '3.00 €'
+
+formatedNumber = formatToCurrency(300.5, 2)
+
+console.log(formatedNumber)
+// => '300.50 €'
+
+formatedNumber = formatToCurrency(1234567.9, 2)
+
+console.log(formatedNumber)
+// => '1.234.567,90 €'
+```
