@@ -12,3 +12,4 @@
     * [isValidMobileNumber](validators.md?id=isvalidmobilenumbermobilenumber-string)
     * [isValidCCNumber](validators.md?id=isvalidccnumbercitizencardnumber-string)
     * [isValidLicensePlate](validators.md?id=isvalidlicenseplateplatenumber-string)
+    * [isValidCPECUI](validators.md?id=isvalidcpecui-string)
