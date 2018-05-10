@@ -5,11 +5,11 @@
  *
  **/
 
-export default function formatCurrency(number, numDecimals) {
+export default function formatToCurrency(number, numDecimals) {
   if (typeof number !== 'number' || isNaN(number)) return false
 
-  let numTrailingZeroes = numDecimals === undefined ? 0 : numDecimals
   let integer, decimal, output, string
+  let numTrailingZeroes = numDecimals === undefined ? 0 : numDecimals
 
   string =
     numTrailingZeroes !== 0
