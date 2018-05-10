@@ -1,19 +1,21 @@
 {
   "name": "portuguese-utils",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description":
     "A set of usefull utils for developing Portuguese Web Applications",
-  "main": "./index.js",
+  "main": "index.js",
+  "browser": "portuguese-utils.min.js",
   "types": "types/index.d.ts",
   "scripts": {
     "build":
-      "babel src --out-dir . --ignore **/__tests__  && cpx src/types/**/*.d.ts types/",
+      "babel src --out-dir . --ignore **/__tests__,__tests__  && rollup -c && cpx src/types/**/*.d.ts types/",
     "precommit": "lint-staged",
     "lint": "prettier src/**/*.js -l",
     "lint:fix": "prettier src/**/*.js --write",
     "prepublish": "NODE_ENV=production npm run build",
-    "watch": "rm -rf dist/ && babel -w src --out-dir . --ignore **/__tests__",
-    "test": "jest",
+    "watch":
+      "rm -rf dist/ && babel -w src --out-dir . --ignore **/__tests__,__tests__",
+    "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "lint-staged": {
@@ -28,20 +30,29 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-jest": "^22.4.3",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "babel-runtime": "^6.26.0",
     "cpx": "^1.5.0",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
     "lint-staged": "^7.1.0",
-    "prettier": "1.12.1"
+    "prettier": "1.12.1",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^3.0.0"
   },
   "jest": {
+    "collectCoverageFrom": ["src/**/*.{js}"],
     "verbose": true,
     "testMatch": ["<rootDir>/src/**/__tests__/**/*.test.js"],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
     },
     "moduleDirectories": ["node_modules", "src"]
+  },
+  "dependencies": {
+    "core-js": "^2.5.6"
   }
 }

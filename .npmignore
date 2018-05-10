@@ -4,3 +4,9 @@ src/
 .babelrc
 versionist.conf.js
 docs/
+.github
+.editorconfig
+.prettierrc.yml
+.travis.yml
+CODE_OF_CONDUCT.md
+coverage/
