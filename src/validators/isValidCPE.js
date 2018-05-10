@@ -13,14 +13,9 @@ export default function isValidCPE(cpe) {
   // Must be a string
   if (typeof cpe !== 'string') return false
 
-  // Trim and Uppercase
-  const parsed = cpe.replace(/\s+/g, '').toUpperCase()
-
-  // Must be exactly 20 characters long
-  if (parsed.length != 20) return false
-
   // Validate with a pattern
   // Rules: PT(4digits)(12digits)(2Characters)
+  const parsed = cpe.replace(/\s+/g, '').toUpperCase()
   const pattern = /PT(\d{4})(\d{12})([A-Z]{2})/g
   if (!pattern.test(parsed)) return false
 
@@ -33,8 +28,5 @@ export default function isValidCPE(cpe) {
   const B = ABValues[Math.floor(remainder % 23)]
 
   // A and B must be in the CPE
-  if (parsed.indexOf(A) === -1 || parsed.indexOf(B) === -1) return false
-
-  // Should return true if all goes well
-  return true
+  return parsed.indexOf(A) !== -1 && parsed.indexOf(B) !== -1 ? true : false
 }
