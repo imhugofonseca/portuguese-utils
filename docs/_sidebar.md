@@ -6,7 +6,7 @@
 * Documentation
   * Formaters
     * [formatDecimalNumber](formaters?id=formatdecimalnumbernumber-stringnumber-options-object)
-    * [formatToCurrency](formaters?id=formatdToCurrency)
+    * [formatToCurrency](formaters?id=formattocurrencynumber-number-numdecimals-number)
   * Validators
     * [isValidNIF](validators.md?id=isvalidnifnif-string)
     * [isValidPostalCode](validators.md?id=isvalidpostalcodepostalcode-string)
