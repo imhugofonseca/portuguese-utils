@@ -16,7 +16,7 @@ export default function isValidCPE(cpe) {
   // Validate with a pattern
   // Rules: PT(4digits)(12digits)(2Characters)
   const parsed = cpe.replace(/\s+/g, '').toUpperCase()
-  const pattern = /PT(\d{4})(\d{12})([A-Z]{2})/g
+  const pattern = /PT(\d{16})([A-Z]{2})/g
   if (!pattern.test(parsed)) return false
 
   // Calculate verification characters
