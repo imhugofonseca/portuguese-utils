@@ -3,7 +3,7 @@ import isValidNIF from './isValidNIF'
 import isValidMobileNumber from './isValidMobileNumber'
 import isValidCCNumber from './isValidCCNumber'
 import isValidLicensePlate from './isValidLicensePlate'
-import isValidCPE from './isValidCPE'
+import isValidCPECUI from './isValidCPECUI'
 
 export {
   isValidPostalCode,
@@ -11,5 +11,5 @@ export {
   isValidMobileNumber,
   isValidCCNumber,
   isValidLicensePlate,
-  isValidCPE
+  isValidCPECUI
 }

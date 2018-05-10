@@ -7,7 +7,7 @@ import { QueueScheduler } from 'rxjs/scheduler/QueueScheduler'
  * @param {String} cpe
  */
 
-export default function isValidCPE(cpe) {
+export default function isValidCPECUI(cpe) {
   const ABValues = 'TRWAGMYFPDXBNJZSQVHLCKE'
 
   // Must be a string
@@ -28,5 +28,9 @@ export default function isValidCPE(cpe) {
   const B = ABValues[Math.floor(remainder % 23)]
 
   // A and B must be in the CPE
-  return parsed.indexOf(A) !== -1 && parsed.indexOf(B) !== -1 ? true : false
+  const lastTwoCharacters = parsed.substring(parsed.length, parsed.length - 2)
+  return lastTwoCharacters[0].indexOf(A) !== -1 &&
+    lastTwoCharacters[1].indexOf(B) !== -1
+    ? true
+    : false
 }
