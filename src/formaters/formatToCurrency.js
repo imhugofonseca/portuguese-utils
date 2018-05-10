@@ -5,6 +5,31 @@
  *
  **/
 
+export default function formatCurrency(number, numDecimals) {
+  if (typeof number !== 'number' || isNaN(number)) return false
+
+  let numTrailingZeroes = numDecimals === undefined ? 0 : numDecimals
+  let integer, decimal, output, string
+
+  string =
+    numTrailingZeroes !== 0
+      ? number.toFixed(numTrailingZeroes)
+      : Math.floor(number).toString()
+
+  if (string.indexOf('.') !== -1) {
+    let split = string.split('.')
+    decimal = split[1]
+    integer = intToThousands(split[0])
+    output = integer + ',' + decimal
+  } else {
+    integer = intToThousands(string)
+    output = integer
+  }
+
+  output = output + ' €'
+  return output
+}
+
 /**
   * Helper function
   * Returns a string number with the thounsands separator
@@ -31,29 +56,4 @@ function intToThousands(integer) {
     .split('')
     .reverse()
     .join('')
-}
-
-export default function formatCurrency(number, numDecimals) {
-  if (typeof number !== 'number' || isNaN(number)) return false
-
-  let numTrailingZeroes = numDecimals === undefined ? 0 : numDecimals
-  let integer, decimal, output, string
-
-  string =
-    numTrailingZeroes !== 0
-      ? number.toFixed(numTrailingZeroes)
-      : Math.floor(number).toString()
-
-  if (string.indexOf('.') !== -1) {
-    let split = string.split('.')
-    decimal = split[1]
-    integer = intToThousands(split[0])
-    output = integer + ',' + decimal
-  } else {
-    integer = intToThousands(string)
-    output = integer
-  }
-
-  output = output + ' €'
-  return output
 }
