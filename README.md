@@ -23,7 +23,7 @@ Using Yarn:
 You can use this lib in the browser using the minified bundle via CDN.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/portuguese-utils@0.0.10/portuguese-utils.min.js" />
+<script src="https://cdn.jsdelivr.net/npm/portuguese-utils@latest/portuguese-utils.min.js" />
 <script>
     portugueseUtils.isValidPostalCode('3863-122')
 </script>
