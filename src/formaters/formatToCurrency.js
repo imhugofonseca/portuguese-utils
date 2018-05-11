@@ -52,17 +52,10 @@ function addSeparators(number) {
   return number
     .split('')
     .reverse()
-    .reduce((acc, curr) => {
-      if (count === 3) {
-        acc += '.' + curr
-        count = 0
-      } else {
-        acc += curr
-      }
-      count++
-      return acc
-    }, '')
-    .split('')
+    .reduce((end, digit, index) => {
+      end.push(index && index % 3 === 0 ? `${digit}.` : digit)
+      return end
+    }, [])
     .reverse()
     .join('')
 }
