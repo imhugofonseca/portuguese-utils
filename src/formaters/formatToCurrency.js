@@ -33,7 +33,7 @@ export default function formatToCurrency(number, numDecimals) {
 
 /**
   * Helper function
-  * Returns a the 'number' with thousands separator
+  * Returns a number with thousands separator
   + Example: 1000000 => 1.000.000
   * @param {string} number
 **/
