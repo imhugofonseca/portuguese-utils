@@ -53,7 +53,7 @@ function addSeparators(number) {
     .split('')
     .reverse()
     .reduce((end, digit, index) => {
-      end.push(index && index % 3 === 0 ? `${digit}.` : digit)
+      end.push(index && index % 3 === 0 ? `${digit} ` : digit)
       return end
     }, [])
     .reverse()
