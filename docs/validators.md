@@ -1,16 +1,16 @@
 # Validators
 
 ## isValidNIF(nif: string)
+
 Validates a portuguese fiscal number
 
-
 #### Arguments
-***nif (string)*** : The fiscal number to be checked as string.
 
+**_nif (string)_** : The fiscal number to be checked as string.
 
 #### Returns
-***(boolean)***: True if valid and False if invalid.
 
+**_(boolean)_**: True if valid and False if invalid.
 
 #### Example
 
@@ -23,16 +23,16 @@ console.log(isNIFValid)
 ```
 
 ## isValidPostalCode(postalCode: string)
+
 Validates a portuguese postal-code
 
-
 #### Arguments
-***postalCode (string)*** : The postal code to be checked as string.
 
+**_postalCode (string)_** : The postal code to be checked as string.
 
 #### Returns
-***(boolean)***: True if valid and False if invalid.
 
+**_(boolean)_**: True if valid and False if invalid.
 
 #### Example
 
@@ -43,17 +43,18 @@ const isCodeValid = isValidPostalCode('3865-134')
 console.log(isCodeValid)
 // => true
 ```
+
 ## isValidMobileNumber(mobileNumber: string)
+
 Validates a portuguese mobile number
 
-
 #### Arguments
-***mobileNumber (string)*** : The mobile number to be checked as string.
 
+**_mobileNumber (string)_** : The mobile number to be checked as string.
 
 #### Returns
-***(boolean)***: True if valid and False if invalid.
 
+**_(boolean)_**: True if valid and False if invalid.
 
 #### Example
 
@@ -66,16 +67,16 @@ console.log(isNumberValid)
 ```
 
 ## isValidCCNumber(citizenCardNumber: string)
+
 Validates a portuguese citizen card number
 
-
 #### Arguments
-***citizenCardNumber (string)*** : The citizen card number to be checked as string.
 
+**_citizenCardNumber (string)_** : The citizen card number to be checked as string.
 
 #### Returns
-***(boolean)***: True if valid and False if invalid.
 
+**_(boolean)_**: True if valid and False if invalid.
 
 #### Example
 
@@ -88,16 +89,16 @@ console.log(isCCValid)
 ```
 
 ## isValidLicensePlate(plateNumber: string)
+
 Validates a portuguese license plate number
 
-
 #### Arguments
-***plateNumber (string)*** : The license plate number checked as string.
 
+**_plateNumber (string)_** : The license plate number checked as string.
 
 #### Returns
-***(boolean)***: True if valid and False if invalid.
 
+**_(boolean)_**: True if valid and False if invalid.
 
 #### Example
 
@@ -106,5 +107,30 @@ import isValidLicensePlate from 'portuguese-utils/validators/isValidLicensePlate
 const isLicensePlateValid = isValidLicensePlate('00-AA-00')
 
 console.log(isLicensePlateValid)
+// => true
+```
+
+## isValidCPECUI(cpe: string)
+
+Validates CPE and CUI
+
+* CPE - Código de ponto de entrega
+* CUI - Código universal da instalação
+
+#### Arguments
+
+**_cpe (string)_** : the CPE or CUI.
+
+#### Returns
+
+**_(boolean)_**: True if valid and False if invalid.
+
+#### Example
+
+```js
+import isValidCPECUI from 'portuguese-utils/validators/isValidCPECUI'
+const isValid = isValidCPECUI('PT 0014 483920194837 DW')
+
+console.log(isValid)
 // => true
 ```

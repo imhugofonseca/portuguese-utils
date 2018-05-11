@@ -1,3 +1,4 @@
 import formatDecimalNumber from './formatDecimalNumber'
+import formatToCurrency from './formatToCurrency'
 
-export { formatDecimalNumber }
+export { formatDecimalNumber, formatToCurrency }
