@@ -134,3 +134,25 @@ const isValid = isValidCPECUI('PT 0014 483920194837 DW')
 console.log(isValid)
 // => true
 ```
+
+## isValidCurrency(currency: string)
+
+Validates Currency
+
+#### Arguments
+
+**_currency (string)_** : The currency string to be validated
+
+#### Returns
+
+**_(boolean)_**: True if valid and False if invalid.
+
+#### Example
+
+```js
+import isValidCurrency from 'portuguese-utils/validators/isValidCurrency'
+const isValid = isValidCurrency('1.000,20 €')
+
+console.log(isValid)
+// => true
+```
