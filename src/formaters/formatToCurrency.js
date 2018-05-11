@@ -6,10 +6,14 @@
  **/
 
 export default function formatToCurrency(number, numDecimals) {
-  if (typeof number !== 'number' || isNaN(number)) return false
+  if (typeof number !== 'number') {
+    throw new TypeError('Argument number must be of type number')
+  }
 
-  let integer, decimal, output, string
-  string = numDecimals
+  let integer
+  let decimal
+  let output
+  let string = numDecimals
     ? number.toFixed(numDecimals)
     : Math.floor(number).toString()
 
@@ -17,13 +21,13 @@ export default function formatToCurrency(number, numDecimals) {
     let split = string.split('.')
     decimal = split[1]
     integer = addSeparators(split[0])
-    output = integer + ',' + decimal
+    output = `${integer},${decimal}`
   } else {
     integer = addSeparators(string)
     output = integer
   }
 
-  output = output + ' €'
+  output = `${output} €`
   return output
 }
 

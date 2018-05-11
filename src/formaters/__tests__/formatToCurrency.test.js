@@ -1,11 +1,11 @@
 import formatToCurrency from 'formaters/formatToCurrency'
 
-test('formatToCurrency returns false for invalid types', () => {
-  expect(formatToCurrency(undefined)).toBe(false)
-  expect(formatToCurrency('12345')).toBe(false)
+test('formatToCurrency throws an error for invalid types', () => {
+  expect(() => formatToCurrency(undefined)).toThrow(TypeError)
+  expect(() => formatToCurrency('12345')).toThrow(TypeError)
 })
 
-test('formatToCurrency returns true if valid plate number', () => {
+test('formatToCurrency should return formatted number as currency string', () => {
   expect(formatToCurrency(1234)).toBe('1.234 €')
   expect(formatToCurrency(1, 2)).toBe('1,00 €')
   expect(formatToCurrency(123)).toBe('123 €')
