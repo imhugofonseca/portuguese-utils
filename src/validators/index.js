@@ -4,6 +4,7 @@ import isValidMobileNumber from './isValidMobileNumber'
 import isValidCCNumber from './isValidCCNumber'
 import isValidLicensePlate from './isValidLicensePlate'
 import isValidCPECUI from './isValidCPECUI'
+import isValidCurrency from './isValidCurrency'
 
 export {
   isValidPostalCode,
@@ -11,5 +12,6 @@ export {
   isValidMobileNumber,
   isValidCCNumber,
   isValidLicensePlate,
-  isValidCPECUI
+  isValidCPECUI,
+  isValidCurrency
 }
