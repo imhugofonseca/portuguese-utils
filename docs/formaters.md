@@ -62,7 +62,7 @@ console.log(formatedNumber)
 // => '300,128'
 ```
 
-## formatToCurrency(number: number, numDecimals: number)
+## formatToCurrency(number: number, numDecimals: number, ISO: boolan)
 
 Formats numbers (integer or floating) portugal's currency
 
@@ -70,9 +70,13 @@ Formats numbers (integer or floating) portugal's currency
 
 **number (number)**: The number to be formated
 
-**numDecimals (number)**: Option for number of decimals
+**numDecimals (number|string)**: Option for number of decimals
 
 > _default: 0_
+
+**ISO (boolean)**: Option to show ISO version of the symbol (EUR). False will print '€', true will print 'EUR'
+
+> _default: false_
 
 #### Returns
 
@@ -98,4 +102,9 @@ formatedNumber = formatToCurrency(1234567.9, 2)
 
 console.log(formatedNumber)
 // => '1.234.567,90 €'
+
+formatedNumber = formatToCurrency(500.5, 2, true)
+
+console.log(formatedNumber)
+// => '500,50 EUR'
 ```

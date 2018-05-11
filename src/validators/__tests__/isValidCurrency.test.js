@@ -12,7 +12,8 @@ test('Returns false if currency is invalid', () => {
 
 test('Returns false if currency is invalid', () => {
   expect(isValidCurrency('1 €')).toBe(true)
+  expect(isValidCurrency('1 EUR')).toBe(true)
   expect(isValidCurrency('1 000 €')).toBe(true)
-  expect(isValidCurrency('1 000,20 €')).toBe(true)
+  expect(isValidCurrency('1 000,20 EUR')).toBe(true)
   expect(isValidCurrency('21 231 000,200123 €')).toBe(true)
 })
