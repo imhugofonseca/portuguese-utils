@@ -67,7 +67,6 @@ function calculateEaster(year, x, y) {
     day = d + e + 22
     month = 3
   }
-
   return new Date(year, month - 1, day)
 }
 
@@ -83,15 +82,13 @@ function calculateChristsBody(easter) {
   return newDate
 }
 
-function getCurrentYearEaster() {
-  const currentYear = new Date().getFullYear()
-
-  const { x, y } = modifyXY(currentYear)
-  return calculateEaster(currentYear, x, y)
+export function getYearEaster(year = new Date().getFullYear()) {
+  const { x, y } = modifyXY(year)
+  return calculateEaster(year, x, y)
 }
 
-function calculateMobileHolidays() {
-  const easter = getCurrentYearEaster()
+function calculateMobileHolidays(year) {
+  const easter = getYearEaster(year)
   const christsBody = calculateChristsBody(easter)
   const holyFriday = calculateHolyFriday(easter)
 
@@ -117,7 +114,7 @@ function calculateMobileHolidays() {
 export default function isHoliday(date, feedback) {
   if (typeof date !== 'object') return false
 
-  const holidays = [...HOLIDAYS, ...calculateMobileHolidays()]
+  const holidays = [...HOLIDAYS, ...calculateMobileHolidays(date.getFullYear())]
 
   const didFindHoliday = holidays.filter(
     holiday =>
