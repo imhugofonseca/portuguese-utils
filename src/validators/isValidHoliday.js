@@ -17,29 +17,30 @@ const HOLIDAYS = [
 function modifyXY(year) {
   let x
   let y
+  let xOffset = 0
+  let yOffset = 0
 
-  if (year < 1800) {
-    if (year > 1699) {
-      x = X + 1
-      y = Y + 1
-    }
+  if (year < 1800 && year > 1699) {
+    xOffset = 1
+    yOffset = 1
+  } else if (year < 1900) {
+    xOffset = 2
+    yOffset = 2
+  } else if (year < 2100) {
+    xOffset = 2
+    yOffset = 3
+  } else if (year < 2200) {
+    xOffset = 2
+    yOffset = 4
   } else {
-    if (year < 1900) {
-      x = X + 2
-      y = Y + 2
-    } else if (year < 2100) {
-      x = X + 2
-      y = Y + 3
-    } else if (year < 2200) {
-      x = X + 2
-      y = Y + 4
-    } else {
-      x = X + 3
-      y = Y + 5
-    }
+    xOffset = 3
+    yOffset = 5
   }
 
-  return { x, y }
+  return {
+    x: X + xOffset,
+    y: Y + yOffset
+  }
 }
 
 function calculateEaster(year, x, y) {
@@ -49,36 +50,27 @@ function calculateEaster(year, x, y) {
   const d = (19 * a + x) % 30
   const e = (2 * b + 4 * c + 6 * d + y) % 7
 
-  let day = -1
-  let month = -1
-  if (d + e > 9) {
-    day = d + e - 9
+  const dayOffset = d + e > 9 ? -9 : 22
+  const monthOffset = d + e > 9 ? 1 : 0
+  let day = d + e + dayOffset
+  let month = 3 + monthOffset
 
-    if (day == 26) {
-      day = 19
-    }
-
-    if (day == 25 && a > 10) {
-      day = 18
-    }
-
-    month = 4
-  } else {
-    day = d + e + 22
-    month = 3
+  // 2 exceptions occur to these calculations
+  if (month == 4 && day == 26) {
+    day = 19
   }
+
+  if (month == 4 && day == 25 && d == 28 && a > 10) {
+    day = 18
+  }
+
   return new Date(year, month - 1, day)
 }
 
-function calculateHolyFriday(easter) {
+function calculateHolidayFromEaster(easter, daysFromEaster) {
   const newDate = new Date(easter)
-  newDate.setDate(easter.getDate() - 2)
-  return newDate
-}
+  newDate.setDate(easter.getDate() + daysFromEaster)
 
-function calculateChristsBody(easter) {
-  const newDate = new Date(easter)
-  newDate.setDate(easter.getDate() + 60)
   return newDate
 }
 
@@ -89,8 +81,8 @@ export function getYearEaster(year = new Date().getFullYear()) {
 
 function calculateMobileHolidays(year) {
   const easter = getYearEaster(year)
-  const christsBody = calculateChristsBody(easter)
-  const holyFriday = calculateHolyFriday(easter)
+  const christsBody = calculateHolidayFromEaster(easter, 60)
+  const holyFriday = calculateHolidayFromEaster(easter, -2)
 
   return [
     {
