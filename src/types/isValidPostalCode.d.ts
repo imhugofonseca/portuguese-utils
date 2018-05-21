@@ -1,1 +1,0 @@
-export declare function isValidPostalCode(postalCode: string): boolean

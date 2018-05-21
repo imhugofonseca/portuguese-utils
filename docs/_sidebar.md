@@ -15,3 +15,8 @@
     * [isValidLicensePlate](validators.md?id=isvalidlicenseplateplatenumber-string)
     * [isValidCPECUI](validators.md?id=isvalidcpecui-string)
     * [isValidCurrency](validators.md?id=isvalidcurrency-string)
+  * Helpers
+    * [monthsExtended](helpers?id=monthsextended)
+    * [monthsSlugs](helpers?id=monthsslug)
+    * [weekDays](helpers?id=weekdays)
+    * [weekDaysSlug](helpers?id=weekdaysslug)

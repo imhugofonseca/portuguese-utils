@@ -42,16 +42,6 @@ export default function formatToCurrency(number, numDecimals, ISO) {
 **/
 
 function addSeparators(number) {
-  if (typeof number !== 'string' || isNaN(parseInt(number))) {
-    throw new TypeError('Argument number must be digits of type String')
-  }
-
-  if (number.indexOf('.') !== -1) {
-    throw new TypeError('Argument must be an integer of type String')
-  }
-
-  let count = 0
-
   return number
     .split('')
     .reverse()
