@@ -10,8 +10,8 @@
     "build":
       "babel src --out-dir . --ignore **/__tests__,__tests__  && rollup -c && cpx src/types/**/*.d.ts types/",
     "precommit": "lint-staged",
-    "lint": "npx prettier src/**/*.js -l",
-    "lint:fix": "npx prettier src/**/*.js --write",
+    "lint": "prettier src/**/*.js -l",
+    "lint:fix": "prettier src/**/*.js --write",
     "prepublish": "NODE_ENV=production npm run build",
     "watch":
       "rm -rf dist/ && babel -w src --out-dir . --ignore **/__tests__,__tests__",
