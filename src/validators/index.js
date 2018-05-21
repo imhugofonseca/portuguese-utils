@@ -5,6 +5,7 @@ import isValidCCNumber from './isValidCCNumber'
 import isValidLicensePlate from './isValidLicensePlate'
 import isValidCPECUI from './isValidCPECUI'
 import isValidCurrency from './isValidCurrency'
+import isValidHoliday from './isValidHoliday'
 
 export {
   isValidPostalCode,
@@ -13,5 +14,6 @@ export {
   isValidCCNumber,
   isValidLicensePlate,
   isValidCPECUI,
-  isValidCurrency
+  isValidCurrency,
+  isValidHoliday
 }
