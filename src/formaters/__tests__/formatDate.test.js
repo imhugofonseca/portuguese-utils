@@ -4,6 +4,7 @@ test('formatDate returns corrected format', () => {
   expect(formatDate('2016-10-12')).toBe('12-10-2016')
   expect(formatDate('2016-10-01')).toBe('01-10-2016')
   expect(formatDate(new Date('2016-10-12'))).toBe('12-10-2016')
+  expect(formatDate(new Date('2016-10-12'), null)).toBe('12-10-2016')
   expect(formatDate(new Date('invalid'))).toBe('Invalid Date')
   expect(formatDate(null)).toBe('Invalid Date')
   expect(formatDate(undefined)).toBe('Invalid Date')

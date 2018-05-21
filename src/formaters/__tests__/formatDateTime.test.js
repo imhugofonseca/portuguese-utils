@@ -3,6 +3,9 @@ import formatDateTime from 'formaters/formatDateTime'
 test('formatDateTime returns corrected format', () => {
   expect(formatDateTime('2016-10-12')).toBe('12-10-2016 00:00:00')
   expect(formatDateTime(new Date('2016-10-12'))).toBe('12-10-2016 00:00:00')
+  expect(formatDateTime(new Date('2016-10-12'), null)).toBe(
+    '12-10-2016 00:00:00'
+  )
   expect(formatDateTime(new Date('invalid'))).toBe('Invalid Date')
   expect(formatDateTime(null)).toBe('Invalid Date')
   expect(formatDateTime(undefined)).toBe('Invalid Date')
