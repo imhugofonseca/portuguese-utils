@@ -1,22 +1,9 @@
-const X = 22
-const Y = 2
-
-const HOLIDAYS = [
-  { day: 1, month: 1, holiday: 'Dia de Ano Novo' },
-  { day: 25, month: 4, holiday: 'Dia da Liberdade' },
-  { day: 1, month: 5, holiday: 'Dia do Trabalhador' },
-  { day: 10, month: 6, holiday: 'Dia de Portugal' },
-  { day: 15, month: 8, holiday: 'Assunção de Nossa Senhora' },
-  { day: 5, month: 10, holiday: 'Implantação da República' },
-  { day: 1, month: 11, holiday: 'Dia de Todos os Santos' },
-  { day: 1, month: 12, holiday: 'Restauração da Independência' },
-  { day: 8, month: 12, holiday: 'Dia da Imaculada Conceição' },
-  { day: 25, month: 12, holiday: 'Natal' }
-]
+import 'core-js/modules/es6.array.find'
+import HOLIDAYS from '../helpers/holidays'
 
 function modifyXY(year) {
-  let x
-  let y
+  let x = 22
+  let y = 2
   let xOffset = 0
   let yOffset = 0
 
@@ -38,8 +25,8 @@ function modifyXY(year) {
   }
 
   return {
-    x: X + xOffset,
-    y: Y + yOffset
+    x: x + xOffset,
+    y: y + yOffset
   }
 }
 
@@ -74,7 +61,7 @@ function calculateHolidayFromEaster(easter, daysFromEaster) {
   return newDate
 }
 
-export function getYearEaster(year = new Date().getFullYear()) {
+function getYearEaster(year) {
   const { x, y } = modifyXY(year)
   return calculateEaster(year, x, y)
 }
@@ -103,17 +90,32 @@ function calculateMobileHolidays(year) {
   ]
 }
 
-export default function isHoliday(date, feedback) {
-  if (typeof date !== 'object') return false
+function checkDateValidity(date) {
+  const isDate =
+    date && Object.prototype.toString.call(date) === '[object Date]'
+  if (!isDate) {
+    return isDate
+  } else if (isNaN(date.getTime())) {
+    return false
+  }
+
+  return true
+}
+
+/**
+ *
+ * @param {Date} date
+ * @param {Boolean} showHoliday
+ */
+export default function isHoliday(date, showHoliday) {
+  if (!checkDateValidity(date)) return false
 
   const holidays = [...HOLIDAYS, ...calculateMobileHolidays(date.getFullYear())]
 
-  const didFindHoliday = holidays.filter(
+  const found = holidays.find(
     holiday =>
       holiday.day === date.getDate() && holiday.month === date.getMonth()
   )
 
-  return feedback
-    ? !!didFindHoliday.length && didFindHoliday[0].holiday
-    : !!didFindHoliday.length
+  return showHoliday ? !!found && found.holiday : !!found
 }
