@@ -1,32 +1,32 @@
 import 'core-js/modules/es6.array.find'
 import HOLIDAYS from '../helpers/holidays'
 
-function modifyXY(year) {
-  let x = 22
+function calculateXOffset(year) {
+  let x = 24
+
+  if (year < 1700) x -= 2
+  if (year >= 1700 && year < 1800) x -= 1
+  if (year >= 2200) x += 1
+
+  return x
+}
+
+function calculateYOffset(year) {
   let y = 2
-  let xOffset = 0
-  let yOffset = 0
 
-  if (year < 1800 && year > 1699) {
-    xOffset = 1
-    yOffset = 1
-  } else if (year < 1900) {
-    xOffset = 2
-    yOffset = 2
-  } else if (year < 2100) {
-    xOffset = 2
-    yOffset = 3
-  } else if (year < 2200) {
-    xOffset = 2
-    yOffset = 4
-  } else {
-    xOffset = 3
-    yOffset = 5
-  }
+  if (year >= 1700 && year < 1800) y += 1
+  if (year >= 1800 && year < 1900) y += 2
+  if (year >= 1900 && year < 2100) y += 3
+  if (year >= 2100 && year < 2200) y += 4
+  if (year >= 2200 && year < 2300) y += 5
 
+  return y
+}
+
+function calculateXY(year) {
   return {
-    x: x + xOffset,
-    y: y + yOffset
+    x: calculateXOffset(year),
+    y: calculateYOffset(year)
   }
 }
 
@@ -62,7 +62,7 @@ function calculateHolidayFromEaster(easter, daysFromEaster) {
 }
 
 function getYearEaster(year) {
-  const { x, y } = modifyXY(year)
+  const { x, y } = calculateXY(year)
   return calculateEaster(year, x, y)
 }
 
