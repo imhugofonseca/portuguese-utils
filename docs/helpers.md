@@ -8,7 +8,7 @@ Returns the list of months in portuguese
 
 #### Returns
 
-**_(array)_**: Array of month labels
+* **_(array)_**: Array of month labels
 
 #### Example
 
@@ -27,7 +27,7 @@ Returns the list of months slugs in portuguese
 
 #### Returns
 
-**_(array)_**: Array of month labels
+* **_(array)_**: Array of month labels
 
 #### Example
 
@@ -46,7 +46,7 @@ Returns the list of weekdays in portuguese
 
 #### Returns
 
-**_(array)_**: Array of month labels
+* **_(array)_**: Array of month labels
 
 #### Example
 
@@ -65,7 +65,7 @@ Returns the list of weekdays slugs in portuguese
 
 #### Returns
 
-**_(array)_**: Array of month labels
+* **_(array)_**: Array of month labels
 
 #### Example
 
@@ -84,7 +84,7 @@ Returns the list of portuguese holidays
 
 #### Returns
 
-**_(array)_**: Array of holidays
+* **_(array)_**: Array of holidays
 
 #### Example
 
