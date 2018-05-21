@@ -1,3 +1,5 @@
+import 'core-js/modules/es7.string.pad-start'
+
 /**
  * Formats a date to portuguese
  * @param {string|date} date
