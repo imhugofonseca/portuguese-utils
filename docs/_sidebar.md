@@ -16,7 +16,7 @@
     * [isValidCPECUI](validators.md?id=isvalidcpecui-string)
     * [isValidCurrency](validators.md?id=isvalidcurrency-string)
   * Helpers
-    * [monthsExtended](helpers?id=formatdecimalnumbernumber-stringnumber-options-object)
-    * [monthsSlugs](helpers?id=formattocurrencynumber-number-numdecimals-number)
-    * [weekDays](helpers?id=formattocurrencynumber-number-numdecimals-number)
-    * [weekDaysSlug](helpers?id=formattocurrencynumber-number-numdecimals-number)
+    * [monthsExtended](helpers?id=monthsextended)
+    * [monthsSlugs](helpers?id=monthsslug)
+    * [weekDays](helpers?id=weekdays)
+    * [weekDaysSlug](helpers?id=weekdaysslug)
