@@ -18,7 +18,7 @@ export default function formatDateExtended(date, includeWeekDay = false) {
   let weekDay = ``
   if (includeWeekDay) {
     const wd = date.getUTCDay()
-    const wdIndex = !wd ? weekDays.length - 1 : wd
+    const wdIndex = !wd ? weekDays.length - 1 : wd - 1
     weekDay = `${weekDays[wdIndex]}, `
   }
 
