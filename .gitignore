@@ -1,9 +1,10 @@
 node_modules
 dist
 yarn-error.log
-index.js
+/index.js
 /formaters
 /validators
+/helpers
 /types
 coverage
 portuguese-utils.min.js
