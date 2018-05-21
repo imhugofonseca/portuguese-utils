@@ -1,10 +1,8 @@
 # Helpers
 
-A combination of useful constants and used in portuguese applications.
+A combination of useful constants to use in portuguese applications.
 
-## Months
-
-### monthsExtended
+## monthsExtended
 
 Returns the list of months in portuguese
 
@@ -23,7 +21,7 @@ console.log(monthsExtended)
 
 ---
 
-### monthsSlug
+## monthsSlug
 
 Returns the list of months slugs in portuguese
 
@@ -40,9 +38,9 @@ console.log(monthsSlug)
 // => ['Jan', 'Fev', ...]
 ```
 
-## Week Days
+---
 
-### weekDays
+## weekDays
 
 Returns the list of weekdays in portuguese
 
@@ -61,7 +59,7 @@ console.log(weekDays)
 
 ---
 
-### weekDaysSlug
+## weekDaysSlug
 
 Returns the list of weekdays slugs in portuguese
 
@@ -77,3 +75,28 @@ import weekDaysSlug from 'portuguese-utils/helpers/weekDaysSlug'
 console.log(weekDaysSlug)
 // => ['Seg', 'Ter', ...]
 ```
+
+---
+
+## holydays
+
+Returns the list of portuguese holidays
+
+#### Returns
+
+**_(array)_**: Array of holidays
+
+#### Example
+
+```js
+import holidays from 'portuguese-utils/helpers/holidays'
+
+console.log(holidays)
+// => [
+//      { day: 1, month: 0, holiday: 'Dia de Ano Novo' },
+//      { day: 25, month: 3, holiday: 'Dia da Liberdade' },
+//      ...
+//    ]
+```
+
+---

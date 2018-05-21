@@ -6,7 +6,7 @@
 
 A set of usefull utils for developing Portuguese Web Applications.
 
-## 🔰 How to install
+## How to install
 
 Using NPM:
 
@@ -16,14 +16,14 @@ Using Yarn:
 
 `yarn add portuguese-utils`
 
-## 🚀 How to use
+## How to use
 
 ### CDN
 
 You can use this lib in the browser using the minified bundle via CDN.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/portuguese-utils@0.0.10/portuguese-utils.min.js" />
+<script src="https://cdn.jsdelivr.net/npm/portuguese-utils/portuguese-utils.min.js" />
 <script>
     portugueseUtils.isValidPostalCode('3863-122')
 </script>
@@ -60,12 +60,6 @@ const postalCode = '3863-122'
 const isMyPostalCodeValid = isValidPostalCode(postalCode)
 console.log(isMyPostalCodeValid) // true
 ```
-
-## 📎 Documentation
-
-Documentation is available at:
-
-https://portuguese-utils.netlify.com/#/
 
 ## License
 
