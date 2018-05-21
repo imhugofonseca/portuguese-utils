@@ -1,22 +1,29 @@
-* [Getting started]()
+* Getting started
 
-  * [Install](?id=🔰-how-to-install)
-  * [Using](?id=🚀-how-to-use)
+  * [Install](?id=how-to-install)
+  * [Using](?id=how-to-use)
 
-* Documentation
-  * Formaters
-    * [formatDecimalNumber](formaters?id=formatdecimalnumbernumber-stringnumber-options-object)
-    * [formatToCurrency](formaters?id=formattocurrencynumber-number-numdecimals-number)
-  * Validators
-    * [isValidNIF](validators.md?id=isvalidnifnif-string)
-    * [isValidPostalCode](validators.md?id=isvalidpostalcodepostalcode-string)
-    * [isValidMobileNumber](validators.md?id=isvalidmobilenumbermobilenumber-string)
-    * [isValidCCNumber](validators.md?id=isvalidccnumbercitizencardnumber-string)
-    * [isValidLicensePlate](validators.md?id=isvalidlicenseplateplatenumber-string)
-    * [isValidCPECUI](validators.md?id=isvalidcpecui-string)
-    * [isValidCurrency](validators.md?id=isvalidcurrency-string)
-  * Helpers
-    * [monthsExtended](helpers?id=monthsextended)
-    * [monthsSlugs](helpers?id=monthsslug)
-    * [weekDays](helpers?id=weekdays)
-    * [weekDaysSlug](helpers?id=weekdaysslug)
+* [Formaters](formaters?id=formaters)
+
+  * [formatDecimalNumber](formaters?id=formatdecimalnumber)
+  * [formatToCurrency](formaters?id=formattocurrency)
+  * [formatDate](formaters?id=formatdate)
+  * [formatDateTime](formaters?id=formatdatetime)
+  * [formatDateExtended](formaters?id=formatdateextended)
+
+* [Validators](validators?id=validators)
+
+  * [isValidNIF](validators?id=isvalidnif)
+  * [isValidPostalCode](validators?id=isvalidpostalcode)
+  * [isValidMobileNumber](validators?id=isvalidmobilenumber)
+  * [isValidCCNumber](validators?id=isvalidccnumber)
+  * [isValidLicensePlate](validators?id=isvalidlicenseplate)
+  * [isValidCPECUI](validators?id=isvalidcpecui)
+  * [isValidCurrency](validators?id=isvalidcurrency)
+
+* [Helpers](helpers)
+  * [monthsExtended](helpers?id=monthsextended)
+  * [monthsSlugs](helpers?id=monthsslug)
+  * [weekDays](helpers?id=weekdays)
+  * [weekDaysSlug](helpers?id=weekdaysslug)
+  * [holidays](helpers?id=holydays)

@@ -1,6 +1,6 @@
 # Validators
 
-## isValidNIF(nif: string)
+## isValidNIF
 
 Validates a portuguese fiscal number
 
@@ -22,7 +22,7 @@ console.log(isNIFValid)
 // => true
 ```
 
-## isValidPostalCode(postalCode: string)
+## isValidPostalCode
 
 Validates a portuguese postal-code
 
@@ -44,7 +44,7 @@ console.log(isCodeValid)
 // => true
 ```
 
-## isValidMobileNumber(mobileNumber: string)
+## isValidMobileNumber
 
 Validates a portuguese mobile number
 
@@ -66,7 +66,7 @@ console.log(isNumberValid)
 // => true
 ```
 
-## isValidCCNumber(citizenCardNumber: string)
+## isValidCCNumber
 
 Validates a portuguese citizen card number
 
@@ -88,7 +88,7 @@ console.log(isCCValid)
 // => true
 ```
 
-## isValidLicensePlate(plateNumber: string)
+## isValidLicensePlate
 
 Validates a portuguese license plate number
 
@@ -110,7 +110,7 @@ console.log(isLicensePlateValid)
 // => true
 ```
 
-## isValidCPECUI(cpe: string)
+## isValidCPECUI
 
 Validates CPE and CUI
 
@@ -135,7 +135,7 @@ console.log(isValid)
 // => true
 ```
 
-## isValidCurrency(currency: string)
+## isValidCurrency
 
 Validates Currency
 
