@@ -2,12 +2,17 @@
  * Helper function to convert a string with a float written with ','
  * for decimal places.
  * @param {string} number
- */
+ **/
 function parseToEnglishFloat(number) {
   const parsed = parseFloat(number.replace(',', '.'))
   if (isNaN(parsed)) throw new Error('Parsed string is NaN')
 
   return parsed
+}
+
+function getPaddedDecimal(number, decimals) {
+  const splitted = number.toFixed(decimals).split('.')
+  return splitted.length > 1 ? `,${splitted[1]}` : ''
 }
 
 /**
@@ -19,7 +24,7 @@ function parseToEnglishFloat(number) {
  *
  **/
 export default function formatToCurrency(number, numDecimals = 0, ISO) {
-  if (typeof number !== 'number' && typeof number !== 'string') {
+  if (['string', 'number'].indexOf(typeof number) == -1) {
     throw new TypeError('Argument number must be of type number or string')
   }
 
@@ -30,11 +35,9 @@ export default function formatToCurrency(number, numDecimals = 0, ISO) {
   }
 
   const integer = Math.floor(numberToFormat).toString()
-  const decimal = numDecimals
-    ? numberToFormat.toFixed(numDecimals).split('.')[1]
-    : ''
+  const decimal = getPaddedDecimal(numberToFormat, numDecimals)
 
-  const output = `${addSeparators(integer)}${numDecimals ? ',' : ''}${decimal}`
+  const output = `${addSeparators(integer)}${decimal}`
   const symbol = ISO ? 'EUR' : '€'
 
   return `${output} ${symbol}`
