@@ -21,7 +21,7 @@
   * [isValidCPECUI](validators?id=isvalidcpecui)
   * [isValidCurrency](validators?id=isvalidcurrency)
   * [isValidHoliday](validators?id=isvalidholiday)
-  
+
 * [Helpers](helpers)
   * [monthsExtended](helpers?id=monthsextended)
   * [monthsSlugs](helpers?id=monthsslug)
