@@ -1,23 +1,30 @@
 /**
  *
- * Formats number (integer or float) to currency
- * @param {number} number
+ * Formats number (integer, float or string) to currency
+ * @param {number|string} number
  * @param {string|number} numDecimals
  * @param {boolean} ISO
  *
  **/
 
 export default function formatToCurrency(number, numDecimals, ISO) {
-  if (typeof number !== 'number') {
-    throw new TypeError('Argument number must be of type number')
+  if (typeof number !== 'number' && typeof number !== 'string') {
+    throw new TypeError('Argument number must be of type number or string')
+  }
+
+  let numberToFormat = number
+
+  if (typeof number === 'string') {
+    numberToFormat = parseFloat(number.replace(',', '.'))
+    if (isNaN(numberToFormat)) throw new Error('Parsed string is NaN')
   }
 
   let integer
   let decimal
   let output
   let string = numDecimals
-    ? number.toFixed(numDecimals)
-    : Math.floor(number).toString()
+    ? numberToFormat.toFixed(numDecimals)
+    : Math.floor(numberToFormat).toString()
   let symbol = ISO ? 'EUR' : '€'
 
   if (string.indexOf('.') !== -1) {
