@@ -2,7 +2,11 @@ import formatToCurrency from 'formaters/formatToCurrency'
 
 test('formatToCurrency throws an error for invalid types', () => {
   expect(() => formatToCurrency(undefined)).toThrow(TypeError)
-  expect(() => formatToCurrency('12345')).toThrow(TypeError)
+  expect(() => formatToCurrency({})).toThrow(TypeError)
+})
+
+test('formatToCurrency throws an error for invalid string parse', () => {
+  expect(() => formatToCurrency('asdasdasd')).toThrow(Error)
 })
 
 test('formatToCurrency should return formatted number as currency string', () => {
@@ -16,4 +20,7 @@ test('formatToCurrency should return formatted number as currency string', () =>
   expect(formatToCurrency(1234.563123)).toBe('1 234 €')
   expect(formatToCurrency(1234.563123, 6)).toBe('1 234,563123 €')
   expect(formatToCurrency(1234567.9, 2)).toBe('1 234 567,90 €')
+  expect(formatToCurrency('12345')).toBe('12 345 €')
+  expect(formatToCurrency('123,45', 2)).toBe('123,45 €')
+  expect(formatToCurrency('123,45')).toBe('123 €')
 })
