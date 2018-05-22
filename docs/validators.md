@@ -22,6 +22,19 @@ console.log(isNIFValid)
 // => true
 ```
 
+### Playground
+
+```runkit
+> id:
+isValidNIF
+
+> preamble:
+var isValidNIF = require('portuguese-utils/validators/isValidNIF').default
+
+> kit:
+isValidNIF('227466756')
+```
+
 ---
 
 ## isValidPostalCode
@@ -44,6 +57,19 @@ import isValidPostalCode from 'portuguese-utils/validators/isValidPostalCode'
 let isCodeValid = isValidPostalCode('3865-134')
 console.log(isCodeValid)
 // => true
+```
+
+### Playground
+
+```runkit
+> id:
+isValidPostalCode
+
+> preamble:
+var isValidPostalCode = require('portuguese-utils/validators/isValidPostalCode').default
+
+> kit:
+isValidPostalCode('1660-112')
 ```
 
 ---
@@ -70,6 +96,19 @@ console.log(isNumberValid)
 // => true
 ```
 
+### Playground
+
+```runkit
+> id:
+isValidMobileNumber
+
+> preamble:
+var isValidMobileNumber = require('portuguese-utils/validators/isValidMobileNumber').default
+
+> kit:
+isValidMobileNumber('964342343')
+```
+
 ---
 
 ## isValidCCNumber
@@ -92,6 +131,19 @@ import isValidCCNumber from 'portuguese-utils/validators/isValidCCNumber'
 let isCCValid = isValidCCNumber('00000000 0 ZZ4')
 console.log(isCCValid)
 // => true
+```
+
+### Playground
+
+```runkit
+> id:
+isValidCCNumber
+
+> preamble:
+var isValidCCNumber = require('portuguese-utils/validators/isValidCCNumber').default
+
+> kit:
+isValidCCNumber('00000000 0 ZZ4')
 ```
 
 ---
@@ -118,6 +170,21 @@ console.log(isLicensePlateValid)
 // => true
 ```
 
+### Playground
+
+```runkit
+> id:
+isValidLicensePlate
+
+> preamble:
+var isValidLicensePlate = require('portuguese-utils/validators/isValidLicensePlate').default
+
+> kit:
+isValidLicensePlate('00-AA-00')
+```
+
+---
+
 ## isValidCPECUI
 
 Validates CPE and CUI
@@ -141,6 +208,19 @@ import isValidCPECUI from 'portuguese-utils/validators/isValidCPECUI'
 let isValid = isValidCPECUI('PT 0014 483920194837 DW')
 console.log(isValid)
 // => true
+```
+
+### Playground
+
+```runkit
+> id:
+isValidCPECUI
+
+> preamble:
+var isValidCPECUI = require('portuguese-utils/validators/isValidCPECUI').default
+
+> kit:
+isValidCPECUI('PT 0014 483920194837 DW')
 ```
 
 ---
@@ -167,6 +247,19 @@ console.log(isValid)
 // => true
 ```
 
+### Playground
+
+```runkit
+> id:
+isValidCurrency
+
+> preamble:
+var isValidCurrency = require('portuguese-utils/validators/isValidCurrency').default
+
+> kit:
+isValidCurrency('1.000,20 €')
+```
+
 ---
 
 ## isValidHoliday
@@ -190,6 +283,19 @@ let date = new Date('2018-04-25')
 let isValidHoliday = isValidHoliday(date)
 console.log(isValidHoliday)
 // => true
+```
+
+### Playground
+
+```runkit
+> id:
+isValidHoliday
+
+> preamble:
+var isValidHoliday = require('portuguese-utils/validators/isValidHoliday').default
+
+> kit:
+isValidHoliday(new Date('2018-04-25'))
 ```
 
 ---

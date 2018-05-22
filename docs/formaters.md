@@ -60,6 +60,22 @@ console.log(formatedNumber)
 // => '300,128'
 ```
 
+#### Playground
+
+```runkit
+> id:
+formatDecimalNumber
+
+> preamble:
+var formatDecimalNumber = require('portuguese-utils/formaters/formatDecimalNumber').default
+
+> kit:
+formatDecimalNumber(300.44, {
+  showLeadingZeros: true,
+  decimals: 2
+})
+```
+
 ---
 
 ## formatToCurrency
@@ -105,6 +121,19 @@ console.log(formatedNumber)
 // => '500,50 EUR'
 ```
 
+#### Playground
+
+```runkit
+> id:
+formatToCurrency
+
+> preamble:
+var formatToCurrency = require('portuguese-utils/formaters/formatToCurrency').default
+
+> kit:
+formatToCurrency('3000.134')
+```
+
 ---
 
 ## formatDate
@@ -138,6 +167,21 @@ formatedDate = formatDate(apiDate, '/')
 console.log(formatedDate)
 // => 18/05/2018
 ```
+
+#### Playground
+
+```runkit
+> id:
+formatDate
+
+> preamble:
+var formatDate = require('portuguese-utils/formaters/formatDate').default
+
+> kit:
+formatDate('2018-05-18T10:57:22.785182+00:00')
+```
+
+---
 
 ---
 
@@ -173,6 +217,19 @@ console.log(formatedDate)
 // => 18/05/2018 10:57:22
 ```
 
+#### Playground
+
+```runkit
+> id:
+formatDateTime
+
+> preamble:
+var formatDateTime = require('portuguese-utils/formaters/formatDateTime').default
+
+> kit:
+formatDateTime('2018-05-18T10:57:22.785182+00:00')
+```
+
 ---
 
 ## formatDateExtended
@@ -205,3 +262,18 @@ formatedDate = formatDateExtended(date, true)
 console.log(formatedDate)
 // => Quarta-Feira, 12 de Outubro de 2016
 ```
+
+### Playground
+
+```runkit
+> id:
+formatDateExtended
+
+> preamble:
+var formatDateExtended = require('portuguese-utils/formaters/formatDateExtended').default
+
+> kit:
+formatDateExtended('2018-05-18T10:57:22.785182+00:00')
+```
+
+---

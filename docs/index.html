@@ -31,9 +31,73 @@
 			search: {
 				paths: 'auto',
 				placeholder: 'Search'
+      },
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            if (lang === "runkit") {
+              var tokens = {}
+              var current = 0
+
+              while (current < code.length) {
+                var char = code[current]
+                var type = ''
+                var data = ''
+
+                if (char === ' ') {
+                  current++
+                  continue;
+                }
+
+                // Get type
+                if (char === '>') {
+                  current++
+                  char = code[current]
+                  while (char !== ':') {
+                    type += char
+                    current++
+                    char = code[current]
+                  }
+                  type = type.trim()
+                }
+
+                if (char === ':') {
+                  current++
+                  char = code[current]
+                  while (char !== '>' && current < code.length) {
+                    data += char
+                    current++
+                    char = code[current]
+                  }
+                  data = data.trim()
+                }
+
+
+                tokens[type] = data
+              }
+
+              setTimeout(function () {
+                var n = RunKit.createNotebook({
+                  title: 'Portuguese Utils - ' + tokens['id'],
+                  element:  document.getElementById("runkit-embeded-" + tokens['id']),
+                  source: tokens['kit'],
+                  preamble: tokens['preamble'],
+                  onLoad: function () {
+                    n.evaluate()
+                  }
+                })
+              }, 0)
+
+              return '<div id="runkit-embeded-' + tokens['id'] + '"></div>'
+
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
       }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="https://embed.runkit.com"></script>
 </body>
 </html>

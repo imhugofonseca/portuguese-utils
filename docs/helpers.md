@@ -19,6 +19,19 @@ console.log(monthsExtended)
 // => ['Janeiro', 'Fevereiro', ...]
 ```
 
+##### Playground
+
+```runkit
+> id:
+monthsExtended
+
+> preamble:
+var monthsExtended = require('portuguese-utils/helpers/monthsExtended').default
+
+> kit:
+console.log(monthsExtended)
+```
+
 ---
 
 ## monthsSlug
@@ -36,6 +49,19 @@ import monthsSlug from 'portuguese-utils/helpers/monthsSlug'
 
 console.log(monthsSlug)
 // => ['Jan', 'Fev', ...]
+```
+
+##### Playground
+
+```runkit
+> id:
+monthsSlug
+
+> preamble:
+var monthsSlug = require('portuguese-utils/helpers/monthsSlug').default
+
+> kit:
+console.log(monthsSlug)
 ```
 
 ---
@@ -57,6 +83,19 @@ console.log(weekDays)
 // => ['Segunda-Feira', 'Terça-Feira', ...]
 ```
 
+##### Playground
+
+```runkit
+> id:
+weekDays
+
+> preamble:
+var weekDays = require('portuguese-utils/helpers/weekDays').default
+
+> kit:
+console.log(weekDays)
+```
+
 ---
 
 ## weekDaysSlug
@@ -76,9 +115,22 @@ console.log(weekDaysSlug)
 // => ['Seg', 'Ter', ...]
 ```
 
+##### Playground
+
+```runkit
+> id:
+weekDaysSlug
+
+> preamble:
+var weekDaysSlug = require('portuguese-utils/helpers/weekDaysSlug').default
+
+> kit:
+console.log(weekDaysSlug)
+```
+
 ---
 
-## holydays
+## holidays
 
 Returns the list of portuguese holidays
 
@@ -97,6 +149,19 @@ console.log(holidays)
 //      { day: 25, month: 3, holiday: 'Dia da Liberdade' },
 //      ...
 //    ]
+```
+
+##### Playground
+
+```runkit
+> id:
+holidays
+
+> preamble:
+var holidays = require('portuguese-utils/helpers/holidays').default
+
+> kit:
+console.log(holidays)
 ```
 
 ---
