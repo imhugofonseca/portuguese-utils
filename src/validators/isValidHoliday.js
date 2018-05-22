@@ -1,6 +1,15 @@
 import 'core-js/modules/es6.array.find'
 import HOLIDAYS from '../helpers/holidays'
 
+/**
+ * The following calculations are based on the Gauss formula
+ *
+ */
+
+/**
+ * calculate the X value for the easter formula
+ * @param {number} year
+ */
 function calculateXOffset(year) {
   let x = 24
 
@@ -11,16 +20,20 @@ function calculateXOffset(year) {
   return x
 }
 
+/**
+ * calculate the Y value for the easter formula.
+ * @param {number} year
+ */
 function calculateYOffset(year) {
   let y = 2
+  const firstDigits = parseInt((year / 100).toString().substring(0, 2))
 
-  if (year >= 1700 && year < 1800) y += 1
-  if (year >= 1800 && year < 1900) y += 2
-  if (year >= 1900 && year < 2100) y += 3
-  if (year >= 2100 && year < 2200) y += 4
-  if (year >= 2200 && year < 2300) y += 5
+  if (year > 1899 && year < 2100) {
+    return (y += 3)
+  }
 
-  return y
+  const diff = firstDigits - 16
+  return (y += diff)
 }
 
 function calculateXY(year) {
