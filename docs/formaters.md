@@ -183,8 +183,6 @@ formatDate('2018-05-18T10:57:22.785182+00:00')
 
 ---
 
----
-
 ## formatDateTime
 
 Formats a date time to portuguese format

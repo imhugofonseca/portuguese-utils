@@ -29,7 +29,7 @@ monthsExtended
 var monthsExtended = require('portuguese-utils/helpers/monthsExtended').default
 
 > kit:
-console.log(monthsExtended)
+monthsExtended
 ```
 
 ---
@@ -61,7 +61,7 @@ monthsSlug
 var monthsSlug = require('portuguese-utils/helpers/monthsSlug').default
 
 > kit:
-console.log(monthsSlug)
+monthsSlug
 ```
 
 ---
@@ -93,7 +93,7 @@ weekDays
 var weekDays = require('portuguese-utils/helpers/weekDays').default
 
 > kit:
-console.log(weekDays)
+weekDays
 ```
 
 ---
@@ -125,7 +125,7 @@ weekDaysSlug
 var weekDaysSlug = require('portuguese-utils/helpers/weekDaysSlug').default
 
 > kit:
-console.log(weekDaysSlug)
+weekDaysSlug
 ```
 
 ---
@@ -161,7 +161,7 @@ holidays
 var holidays = require('portuguese-utils/helpers/holidays').default
 
 > kit:
-console.log(holidays)
+holidays
 ```
 
 ---
