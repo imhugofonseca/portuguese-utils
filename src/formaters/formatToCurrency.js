@@ -1,4 +1,16 @@
 /**
+ * Helper function to convert a string with a float written with ','
+ * for decimal places.
+ * @param {string} number
+ */
+function parseToEnglishFloat(number) {
+  const parsed = parseFloat(number.replace(',', '.'))
+  if (isNaN(parsed)) throw new Error('Parsed string is NaN')
+
+  return parsed
+}
+
+/**
  *
  * Formats number (integer, float or string) to currency
  * @param {number|string} number
@@ -6,8 +18,7 @@
  * @param {boolean} ISO
  *
  **/
-
-export default function formatToCurrency(number, numDecimals, ISO) {
+export default function formatToCurrency(number, numDecimals = 0, ISO) {
   if (typeof number !== 'number' && typeof number !== 'string') {
     throw new TypeError('Argument number must be of type number or string')
   }
@@ -15,30 +26,18 @@ export default function formatToCurrency(number, numDecimals, ISO) {
   let numberToFormat = number
 
   if (typeof number === 'string') {
-    numberToFormat = parseFloat(number.replace(',', '.'))
-    if (isNaN(numberToFormat)) throw new Error('Parsed string is NaN')
+    numberToFormat = parseToEnglishFloat(number)
   }
 
-  let integer
-  let decimal
-  let output
-  let string = numDecimals
-    ? numberToFormat.toFixed(numDecimals)
-    : Math.floor(numberToFormat).toString()
-  let symbol = ISO ? 'EUR' : '€'
+  const integer = Math.floor(numberToFormat).toString()
+  const decimal = numDecimals
+    ? numberToFormat.toFixed(numDecimals).split('.')[1]
+    : ''
 
-  if (string.indexOf('.') !== -1) {
-    let split = string.split('.')
-    decimal = split[1]
-    integer = addSeparators(split[0])
-    output = `${integer},${decimal}`
-  } else {
-    integer = addSeparators(string)
-    output = integer
-  }
+  const output = `${addSeparators(integer)}${numDecimals ? ',' : ''}${decimal}`
+  const symbol = ISO ? 'EUR' : '€'
 
-  output = `${output} ${symbol}`
-  return output
+  return `${output} ${symbol}`
 }
 
 /**
