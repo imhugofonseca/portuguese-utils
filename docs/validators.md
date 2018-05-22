@@ -1,116 +1,124 @@
 # Validators
 
-## isValidNIF(nif: string)
+## isValidNIF
 
 Validates a portuguese fiscal number
 
 #### Arguments
 
-**_nif (string)_** : The fiscal number to be checked as string.
+* **_nif (string)_** : The fiscal number to be checked as string.
 
 #### Returns
 
-**_(boolean)_**: True if valid and False if invalid.
+* **_(boolean)_**: `true` if valid `false` if invalid.
 
 #### Example
 
 ```js
 import isValidNIF from 'portuguese-utils/validators/isValidNIF'
-const isNIFValid = isValidNIF('227866410')
 
+let isNIFValid = isValidNIF('227866410')
 console.log(isNIFValid)
 // => true
 ```
 
-## isValidPostalCode(postalCode: string)
+---
+
+## isValidPostalCode
 
 Validates a portuguese postal-code
 
 #### Arguments
 
-**_postalCode (string)_** : The postal code to be checked as string.
+* **_postalCode (string)_** : The postal code to be checked as string.
 
 #### Returns
 
-**_(boolean)_**: True if valid and False if invalid.
+* **_(boolean)_**: `true` if valid `false` if invalid.
 
 #### Example
 
 ```js
 import isValidPostalCode from 'portuguese-utils/validators/isValidPostalCode'
-const isCodeValid = isValidPostalCode('3865-134')
 
+let isCodeValid = isValidPostalCode('3865-134')
 console.log(isCodeValid)
 // => true
 ```
 
-## isValidMobileNumber(mobileNumber: string)
+---
+
+## isValidMobileNumber
 
 Validates a portuguese mobile number
 
 #### Arguments
 
-**_mobileNumber (string)_** : The mobile number to be checked as string.
+* **_mobileNumber (string)_** : The mobile number to be checked as string.
 
 #### Returns
 
-**_(boolean)_**: True if valid and False if invalid.
+* **_(boolean)_**: `true` if valid `false` if invalid.
 
 #### Example
 
 ```js
 import isValidMobileNumber from 'portuguese-utils/validators/isValidMobileNumber'
-const isNumberValid = isValidMobileNumber('917344888')
 
+let isNumberValid = isValidMobileNumber('917344888')
 console.log(isNumberValid)
 // => true
 ```
 
-## isValidCCNumber(citizenCardNumber: string)
+---
+
+## isValidCCNumber
 
 Validates a portuguese citizen card number
 
 #### Arguments
 
-**_citizenCardNumber (string)_** : The citizen card number to be checked as string.
+* **_citizenCardNumber (string)_** : The citizen card number to be checked as string.
 
 #### Returns
 
-**_(boolean)_**: True if valid and False if invalid.
+* **_(boolean)_**: `true` if valid `false` if invalid.
 
 #### Example
 
 ```js
 import isValidCCNumber from 'portuguese-utils/validators/isValidCCNumber'
-const isCCValid = isValidCCNumber('00000000 0 ZZ4')
 
+let isCCValid = isValidCCNumber('00000000 0 ZZ4')
 console.log(isCCValid)
 // => true
 ```
 
-## isValidLicensePlate(plateNumber: string)
+---
+
+## isValidLicensePlate
 
 Validates a portuguese license plate number
 
 #### Arguments
 
-**_plateNumber (string)_** : The license plate number checked as string.
+* **_plateNumber (string)_** : The license plate number checked as string.
 
 #### Returns
 
-**_(boolean)_**: True if valid and False if invalid.
+* **_(boolean)_**: `true` if valid `false` if invalid.
 
 #### Example
 
 ```js
 import isValidLicensePlate from 'portuguese-utils/validators/isValidLicensePlate'
-const isLicensePlateValid = isValidLicensePlate('00-AA-00')
 
+let isLicensePlateValid = isValidLicensePlate('00-AA-00')
 console.log(isLicensePlateValid)
 // => true
 ```
 
-## isValidCPECUI(cpe: string)
+## isValidCPECUI
 
 Validates CPE and CUI
 
@@ -119,40 +127,69 @@ Validates CPE and CUI
 
 #### Arguments
 
-**_cpe (string)_** : the CPE or CUI.
+* **_cpe (string)_** : the CPE or CUI.
 
 #### Returns
 
-**_(boolean)_**: True if valid and False if invalid.
+* **_(boolean)_**: `true` if valid `false` if invalid.
 
 #### Example
 
 ```js
 import isValidCPECUI from 'portuguese-utils/validators/isValidCPECUI'
-const isValid = isValidCPECUI('PT 0014 483920194837 DW')
 
+let isValid = isValidCPECUI('PT 0014 483920194837 DW')
 console.log(isValid)
 // => true
 ```
 
-## isValidCurrency(currency: string)
+---
+
+## isValidCurrency
 
 Validates Currency
 
 #### Arguments
 
-**_currency (string)_** : The currency string to be validated
+* **_currency (string)_** : The currency string to be validated
 
 #### Returns
 
-**_(boolean)_**: True if valid and False if invalid.
+* **_(boolean)_**: `true` if valid `false` if invalid.
 
 #### Example
 
 ```js
 import isValidCurrency from 'portuguese-utils/validators/isValidCurrency'
-const isValid = isValidCurrency('1.000,20 €')
 
+let isValid = isValidCurrency('1.000,20 €')
 console.log(isValid)
 // => true
 ```
+
+---
+
+## isValidHoliday
+
+Validates a portuguese holiday
+
+#### Arguments
+
+* **_date (date)_** : The date to be checked.
+
+#### Returns
+
+* **_(boolean)_**: `true` if valid `false` if invalid.
+
+#### Example
+
+```js
+import isValidHoliday from 'portuguese-utils/validators/isValidHoliday'
+
+let date = new Date('2018-04-25')
+let isValidHoliday = isValidHoliday(date)
+console.log(isValidHoliday)
+// => true
+```
+
+---
