@@ -1,5 +1,5 @@
-import monthsExtended from 'helpers/monthsExtended'
-import weekDays from 'helpers/weekDays'
+import monthsExtended from '../helpers/monthsExtended'
+import weekDays from '../helpers/weekDays'
 
 /**
  * Formats a date to portuguese extended
