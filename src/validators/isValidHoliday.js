@@ -1,32 +1,45 @@
 import 'core-js/modules/es6.array.find'
 import HOLIDAYS from '../helpers/holidays'
 
-function modifyXY(year) {
-  let x = 22
-  let y = 2
-  let xOffset = 0
-  let yOffset = 0
+/**
+ * The following calculations are based on the Gauss formula
+ *
+ */
 
-  if (year < 1800 && year > 1699) {
-    xOffset = 1
-    yOffset = 1
-  } else if (year < 1900) {
-    xOffset = 2
-    yOffset = 2
-  } else if (year < 2100) {
-    xOffset = 2
-    yOffset = 3
-  } else if (year < 2200) {
-    xOffset = 2
-    yOffset = 4
-  } else {
-    xOffset = 3
-    yOffset = 5
+/**
+ * calculate the X value for the easter formula
+ * @param {number} year
+ */
+function calculateXOffset(year) {
+  let x = 24
+
+  if (year < 1700) x -= 2
+  if (year >= 1700 && year < 1800) x -= 1
+  if (year >= 2200) x += 1
+
+  return x
+}
+
+/**
+ * calculate the Y value for the easter formula.
+ * @param {number} year
+ */
+function calculateYOffset(year) {
+  let y = 2
+  const firstDigits = parseInt((year / 100).toString().substring(0, 2))
+
+  if (year > 1899 && year < 2100) {
+    return (y += 3)
   }
 
+  const diff = firstDigits - 16
+  return (y += diff)
+}
+
+function calculateXY(year) {
   return {
-    x: x + xOffset,
-    y: y + yOffset
+    x: calculateXOffset(year),
+    y: calculateYOffset(year)
   }
 }
 
@@ -62,7 +75,7 @@ function calculateHolidayFromEaster(easter, daysFromEaster) {
 }
 
 function getYearEaster(year) {
-  const { x, y } = modifyXY(year)
+  const { x, y } = calculateXY(year)
   return calculateEaster(year, x, y)
 }
 
