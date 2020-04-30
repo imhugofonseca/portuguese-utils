@@ -37,6 +37,80 @@ isValidNIF('227466756')
 
 ---
 
+## isValidNISS
+
+Validates a portuguese Social Security Identifier Number (NISS)
+
+#### Arguments
+
+* **_niss (string)_** : The Social Security Identifier Number to be checked as string.
+
+#### Returns
+
+* **_(boolean)_**: `true` if valid `false` if invalid.
+
+#### Example
+
+```js
+import isValidNISS from 'portuguese-utils/validators/isValidNISS'
+
+let isNISSValid = isValidNISS('11115611236')
+console.log(isNISSValid)
+// => true
+```
+
+### Playground
+
+```runkit
+> id:
+isValidNISS
+
+> preamble:
+var isValidNISS = require('portuguese-utils/validators/isValidNISS').default
+
+> kit:
+isValidNISS('11115611236')
+```
+
+---
+
+## isValidNNU
+
+Validates a portuguese Heath System, Nacional Patient Number (NNU)
+
+#### Arguments
+
+* **_nnu (string)_** : The national patient number to be checked as string.
+
+#### Returns
+
+* **_(boolean)_**: `true` if valid `false` if invalid.
+
+#### Example
+
+```js
+import isValidNNU from 'portuguese-utils/validators/isValidNNU'
+
+let isNNUValid = isValidNNU('234567232')
+console.log(isNNUValid)
+// => true
+```
+
+### Playground
+
+```runkit
+> id:
+isValidNNU
+
+> preamble:
+var isValidNNU = require('portuguese-utils/validators/isValidNNU').default
+
+> kit:
+isValidNNU('234567232')
+```
+
+---
+
 ## isValidPostalCode
 
 Validates a portuguese postal-code
