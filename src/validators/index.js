@@ -9,6 +9,7 @@ import isValidHoliday from './isValidHoliday'
 import isValidNNU from './isValidNNU'
 import isValidNISS from './isValidNISS'
 
+
 export {
   isValidPostalCode,
   isValidNIF,
