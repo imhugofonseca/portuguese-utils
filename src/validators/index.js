@@ -7,6 +7,8 @@ import isValidCPECUI from './isValidCPECUI'
 import isValidCurrency from './isValidCurrency'
 import isValidHoliday from './isValidHoliday'
 import isValidNNU from './isValidNNU'
+import isValidNISS from './isValidNISS'
+
 
 export {
   isValidPostalCode,
@@ -17,5 +19,6 @@ export {
   isValidCPECUI,
   isValidCurrency,
   isValidHoliday,
-  isValidNNU
+  isValidNNU,
+  isValidNISS
 }
