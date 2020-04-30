@@ -20,12 +20,20 @@ export default function formatDecimalNumber(
   }
 
   let minSize = 3
-  let decimalsSize = options.decimals || 2
+  // because it may be zero, and that will evaluate false
+  if (options.decimals === undefined || options.decimals === null) {
+    // set defaults as 2
+    options.decimals = 2
+  }
+  // let decimalsSize = options.decimals || 2
+  let decimalsSize = options.decimals
   let padSize = minSize + decimalsSize
   let formatedNumber = number
 
+  // set the decimal cases
+  formatedNumber = Number(formatedNumber).toFixed(decimalsSize)
+
   if (options.showLeadingZeros) {
-    formatedNumber = Number(formatedNumber).toFixed(decimalsSize)
     formatedNumber = String(formatedNumber).padEnd(padSize, '0')
   }
 
