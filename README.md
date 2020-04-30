@@ -1,8 +1,11 @@
 # Portuguese Javascript Utils
-
-[![Build Status](https://travis-ci.org/hugo-fonseca/portuguese-utils.svg?branch=master)](https://travis-ci.org/hugo-fonseca/portuguese-utils)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a1670c105d39da659957/maintainability)](https://codeclimate.com/github/hugo-fonseca/portuguese-utils/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a1670c105d39da659957/test_coverage)](https://codeclimate.com/github/hugo-fonseca/portuguese-utils/test_coverage)
+
+
+[![Build Status](https://travis-ci.org/hugo-fonseca/portuguese-utils.svg?branch=master)](https://travis-ci.org/hugo-fonseca/portuguese-utils)
+![npm](https://img.shields.io/npm/v/portuguese-utils?color=rgb%2869%2C%20210%2C%20152%29)
+[![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/1Q52VzcG3848UiWmK81bxqqpQqKehBiQYF)](https://en.cryptobadges.io/donate/1Q52VzcG3848UiWmK81bxqqpQqKehBiQYF)
 
 A set of useful utils for developing Portuguese Web Applications.
 
