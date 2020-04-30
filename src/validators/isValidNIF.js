@@ -21,7 +21,10 @@ export default function isValidNIF(nif) {
   const total = split
     .slice(0, split.length - 1)
     .map(sp => parseInt(sp, 10))
-    .reduce((sum, nif, index, array) => sum + nif * (array.length + 1 - index), 0)
+    .reduce(
+      (sum, nif, index, array) => sum + nif * (array.length + 1 - index),
+      0
+    )
   const divided = 11 - total % 11
   const control = divided >= 10 ? 0 : divided
   return control === parseInt(split[split.length - 1], 10)

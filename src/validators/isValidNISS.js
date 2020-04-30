@@ -1,21 +1,11 @@
 /**
- * Date: 2020-04-03
- * Version: 1
- * Author: Gabriel Martins
- * https://github.com/gabtec
- *
- * Description:
- * ------------
  * Validates a portuguese Social Security Identifier Number (NISS)
  *
- * Documentation:
- * --------------
- *   Portaria n.º 1483/2004 @ https://dre.pt/pesquisa/-/search/219725/details/maximized
- *   Algorithm @ http://maracujah.net/files/software/NISS.pdf
- */
-
-/**
- * Validates a portuguese Social Security Identifier Number (NISS)
+ * Helpful guides:
+ * - Portaria n.º 1483/2004 @ https://dre.pt/pesquisa/-/search/219725/details/maximized
+ * - Algorithm @ http://maracujah.net/files/software/NISS.pdf
+ *
+ *
  * @param {String} niss
  */
 export default function isValidNISS(niss) {

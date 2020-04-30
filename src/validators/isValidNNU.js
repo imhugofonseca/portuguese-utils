@@ -1,25 +1,14 @@
 /**
- * Date: 2020-04-03
- * Version: 1
- * Author: Gabriel Martins
- * https://github.com/gabtec
- *
- * Description:
- * ------------
  * Validates a portuguese Heath System, Nacional Patient Number (NNU)
  *
- * Documentation:
- * --------------
- *    Rules: Decreto-Lei n.º 198/95 artº 6 nº 2
- *    Decreto-Lei n.º 48/97 (new address, same number)
- *    Portaria n.º 161-A/97 (new dimentions, isenções)
- *    Portaria n.º 981/95 nº 4 (defines algorithm MOD 11-2, ISO7064)
- *      mathematical details @https://www.eurocode.org/guides/checkdig/english/examples.html
- *    Códigos do 1º digito @http://www.acss.min-saude.pt/wp-content/uploads/2017/08/Regulamento-Registo-Nac.-Utentes.pdf
- */
-
-/**
- * Validates a portuguese Heath System, Nacional Patient Number (NNU)
+ * Helful guides:
+ * - Rules: Decreto-Lei n.º 198/95 artº 6 nº 2
+ * - Decreto-Lei n.º 48/97 (new address, same number)
+ * - Portaria n.º 161-A/97 (new dimentions, isenções)
+ * - Portaria n.º 981/95 nº 4 (defines algorithm MOD 11-2, ISO7064)
+ * - mathematical details @https://www.eurocode.org/guides/checkdig/english/examples.html
+ * - Códigos do 1º digito @http://www.acss.min-saude.pt/wp-content/uploads/2017/08/Regulamento-Registo-Nac.-Utentes.pdf)
+ *
  * @param {String} nnu
  */
 export default function isValidNNU(nnu) {

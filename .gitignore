@@ -8,3 +8,4 @@ yarn-error.log
 /types
 coverage
 portuguese-utils.min.js
+.DS_Store
