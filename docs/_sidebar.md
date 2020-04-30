@@ -22,7 +22,7 @@
   * [isValidCurrency](validators?id=isvalidcurrency)
   * [isValidHoliday](validators?id=isvalidholiday)
   * [isValidNISS](validators?id=isvalidniss)
-  * [isValidNNU](validators?id=isbalidnnu)
+  * [isValidNNU](validators?id=isvalidnnu)
 
 * [Helpers](helpers)
   * [monthsExtended](helpers?id=monthsextended)
