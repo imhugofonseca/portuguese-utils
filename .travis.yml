@@ -13,10 +13,10 @@ deploy:
   provider: npm
   skip_cleanup: true
   email: imhugofonseca@gmail.com
-  api_key: 
+  api_key:
     secure: $NPM_TOKEN
   on:
     tags: true
-    repo: hugo-fonseca/portuguese-utils
+    repo: imhugofonseca/portuguese-utils
     branch: master
     node: "node"
